@@ -46,6 +46,11 @@ namespace LibraryBL
         {
             return libraryData.bokRepository.Tabell;
         }
+        
+        public IList<Bokning> HämtaBokning()
+        {
+            return libraryData.bokningsRepository.Tabell;
+        }
 
     }
 

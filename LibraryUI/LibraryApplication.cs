@@ -39,5 +39,11 @@ namespace LibraryUI
             returnApplication.Show();
             returnApplication.Location = center;
         }
+
+        private void LibraryApplication_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //TODO: Om jag orkar en messagebox med val...
+            Application.Exit();
+        }
     }
 }

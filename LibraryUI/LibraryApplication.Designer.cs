@@ -75,6 +75,7 @@ namespace LibraryUI
             this.Name = "LibraryApplication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LibraryApplication";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LibraryApplication_FormClosed);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);

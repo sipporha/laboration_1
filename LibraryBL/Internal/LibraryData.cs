@@ -27,6 +27,9 @@ namespace LibraryBL.Internal
 
         public void LaddaData()
         {
+            personalRepository.Tabell.Add(new Personal(1, "zlatte", "Zlatan", "Ibrahimovic", "073-123456", "zlatan@ibrahimovic.se"));
+            personalRepository.Tabell.Add(new Personal(2, "admin", "Beatrice", "Ask", "073-895674", "beatrice@ask.se"));
+
             bokRepository.Tabell.Add(new Bok(10001, "Lär dig laga sönder"));
             bokRepository.Tabell.Add(new Bok(20002, "Stora boken om allmän lagning"));
             bokRepository.Tabell.Add(new Bok(30003, "10 steg att kringgå lagen"));
@@ -46,8 +49,8 @@ namespace LibraryBL.Internal
             medlemRepository.Tabell.Add(new Medlem(6, "Mona", "Monasson", "073-303030", "mona@test.mail.se"));
             medlemRepository.Tabell.Add(new Medlem(7, "Ulla", "Ullasson", "074-404040", "ulla@test.mail.se"));
 
-            personalRepository.Tabell.Add(new Personal(1,"zlatte", "Zlatan", "Ibrahimovic", "073-123456","zlatan@ibrahimovic.se"));
-            personalRepository.Tabell.Add(new Personal(2,"admin" ,"Beatrice", "Ask", "073-895674","beatrice@ask.se"));
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10001, DateTime.Now, DateTime.Now.AddDays(5)));
+            
         }
 
 

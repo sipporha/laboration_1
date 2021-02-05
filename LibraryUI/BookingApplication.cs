@@ -30,6 +30,24 @@ namespace LibraryUI
             dataGridViewMember.RowHeadersVisible = false;
             dataGridViewMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewMember.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+        }
+
+        private void buttonAddMember_Click(object sender, EventArgs e)
+        {
+            //dataGridView1.Columns.Add("Medlemsnummer", "medlem");
+            //dataGridView1.Rows.Add(dataGridViewMember.Rows[0].ToString());
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void buttonAddBooking_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
