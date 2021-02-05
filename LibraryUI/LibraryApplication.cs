@@ -11,11 +11,8 @@ namespace LibraryUI
 {
     public partial class LibraryApplication : Form
     {
-
-        //private readonly Main main;
         BookingApplication bookingApplication;
         ReturnApplication returnApplication;
-
         Point center = new Point(0, 0);
 
         public LibraryApplication()
@@ -27,9 +24,6 @@ namespace LibraryUI
 
             returnApplication = new ReturnApplication();
             returnApplication.MdiParent = this;
-
-            //main = Main.Start();
-
         }
 
         private void toolStripMenuBooking_Click(object sender, EventArgs e)

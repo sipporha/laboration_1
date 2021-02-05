@@ -20,5 +20,5 @@ namespace LibraryUI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
         }
-    }//test
+    }
 }

@@ -36,9 +36,9 @@ namespace LibraryUI
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(38, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 45);
+            this.label1.Size = new System.Drawing.Size(286, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Återlämna böcker";
             // 
@@ -46,7 +46,7 @@ namespace LibraryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1888, 1320);
+            this.ClientSize = new System.Drawing.Size(1890, 1323);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReturnApplication";

@@ -27,16 +27,16 @@ namespace LibraryBL.Internal
 
         public void LaddaData()
         {
-            bokRepository.Tabell.Add(new Bok(0001, "Lär dig laga sönder"));
-            bokRepository.Tabell.Add(new Bok(0002, "Stora boken om allmän lagning"));
-            bokRepository.Tabell.Add(new Bok(0003, "10 steg att kringgå lagen"));
-            bokRepository.Tabell.Add(new Bok(0004, "Att tänka på när körkortet är indraget"));
-            bokRepository.Tabell.Add(new Bok(0005, "En guide till att överleva på prinskorv"));
-            bokRepository.Tabell.Add(new Bok(0006, "Lägg ditt bakomflutna före dig"));
-            bokRepository.Tabell.Add(new Bok(0007, "Bädda sängen i en sovsäck"));
-            bokRepository.Tabell.Add(new Bok(0008, "SkolAtlas 2000"));
-            bokRepository.Tabell.Add(new Bok(0009, "Vilse i min egen trädgård"));
-            bokRepository.Tabell.Add(new Bok(0010, "Lär dig programmera på bara 30år"));
+            bokRepository.Tabell.Add(new Bok(10001, "Lär dig laga sönder"));
+            bokRepository.Tabell.Add(new Bok(20002, "Stora boken om allmän lagning"));
+            bokRepository.Tabell.Add(new Bok(30003, "10 steg att kringgå lagen"));
+            bokRepository.Tabell.Add(new Bok(40004, "Att tänka på när körkortet är indraget"));
+            bokRepository.Tabell.Add(new Bok(50005, "En guide till att överleva på prinskorv"));
+            bokRepository.Tabell.Add(new Bok(60006, "Lägg ditt bakomflutna före dig"));
+            bokRepository.Tabell.Add(new Bok(70007, "Bädda sängen i en sovsäck"));
+            bokRepository.Tabell.Add(new Bok(80008, "SkolAtlas 2000"));
+            bokRepository.Tabell.Add(new Bok(90009, "Vilse i min egen trädgård"));
+            bokRepository.Tabell.Add(new Bok(100010, "Lär dig programmera på bara 30år"));
 
             medlemRepository.Tabell.Add(new Medlem(1, "Lill", "Lindfors", "070-070070", "lillsmail@mail.se"));
             medlemRepository.Tabell.Add(new Medlem(2, "Roger", "Pontare", "072-071170", "rogersmail@mail.se"));
