@@ -30,26 +30,42 @@ namespace LibraryUI
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewMember = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 30);
+            this.label1.Size = new System.Drawing.Size(197, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Boka böcker";
+            // 
+            // dataGridViewMember
+            // 
+            this.dataGridViewMember.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewMember.Location = new System.Drawing.Point(12, 130);
+            this.dataGridViewMember.Name = "dataGridViewMember";
+            this.dataGridViewMember.RowHeadersWidth = 72;
+            this.dataGridViewMember.RowTemplate.Height = 37;
+            this.dataGridViewMember.Size = new System.Drawing.Size(896, 344);
+            this.dataGridViewMember.TabIndex = 1;
             // 
             // BookingApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1888, 1320);
+            this.Controls.Add(this.dataGridViewMember);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BookingApplication";
             this.Text = "BokningsApplication";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +74,6 @@ namespace LibraryUI
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridViewMember;
     }
 }
