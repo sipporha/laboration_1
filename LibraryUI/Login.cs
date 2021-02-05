@@ -14,7 +14,7 @@ namespace LibraryUI
 {
     public partial class Login : Form
     {
-        // test
+      
         private Main main;
 
         public Login()
@@ -33,7 +33,9 @@ namespace LibraryUI
             libraryApplication.Show();
             this.Hide();
 
+            //
             /*
+             
              
            //Lägga till med tryparse istället.
             foreach (char item in textBoxUsername.Text)
