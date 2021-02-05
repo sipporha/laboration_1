@@ -24,13 +24,20 @@ namespace LibraryUI
             dataGridViewBook.RowHeadersVisible = false;
             dataGridViewBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewBook.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewBook.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewBook.MultiSelect = false;
+            dataGridViewBook.AllowUserToResizeRows = false;
+            dataGridViewBook.AllowUserToAddRows = false;
 
             dataGridViewMember.DataSource = main.HämtaMedlem();
             dataGridViewMember.Columns["Medlemsnummer"].Visible = false;
             dataGridViewMember.RowHeadersVisible = false;
             dataGridViewMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewMember.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+            dataGridViewMember.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewMember.MultiSelect = false;
+            dataGridViewMember.AllowUserToResizeRows = false;
+            dataGridViewMember.AllowUserToAddRows = false;
         }
 
         private void buttonAddMember_Click(object sender, EventArgs e)

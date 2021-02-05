@@ -50,7 +50,14 @@ namespace LibraryBL.Internal
             medlemRepository.Tabell.Add(new Medlem(7, "Ulla", "Ullasson", "074-404040", "ulla@test.mail.se"));
 
             bokningsRepository.Tabell.Add(new Bokning(1, 3, 10001, DateTime.Now, DateTime.Now.AddDays(5)));
-            
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10002, DateTime.Now, DateTime.Now.AddDays(5)));
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10003, DateTime.Now, DateTime.Now.AddDays(5)));
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10004, DateTime.Now, DateTime.Now.AddDays(5)));
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10005, DateTime.Now, DateTime.Now.AddDays(5)));
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10006, DateTime.Now, DateTime.Now.AddDays(5)));
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10007, DateTime.Now, DateTime.Now.AddDays(5)));
+            bokningsRepository.Tabell.Add(new Bokning(1, 3, 10008, DateTime.Now, DateTime.Now.AddDays(5)));
+
         }
 
 

@@ -13,6 +13,7 @@ namespace LibraryBL
         public int ISBN { get; private set; }
         public DateTime Starttid { get; private set; }
         public DateTime Sluttid { get; private set; }
+        public bool Återlämnad { get; set; }
 
         internal Bokning(int bokningsnummer, int medlemsnummer, int isbn, DateTime starttid, DateTime sluttid )
         {
