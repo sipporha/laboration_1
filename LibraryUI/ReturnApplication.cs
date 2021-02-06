@@ -30,6 +30,8 @@ namespace LibraryUI
             dataGridViewBooking.MultiSelect = false;
             dataGridViewBooking.AllowUserToResizeRows = false;
             dataGridViewBooking.AllowUserToAddRows = false;
+
+            
         }
 
         private void buttonCancelBooking_Click(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace LibraryUI
 
             foreach (var item in main.HämtaBokning())
             {
-                if (item.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
+                if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
 
                 {
                     item.Återlämnad = true;
@@ -49,6 +51,13 @@ namespace LibraryUI
             dataGridViewBooking.DataSource = typeof(List<Object>);
            LaddaInnehåll();
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(main.HämtaBokning().Count+"");
+            dataGridViewBooking.DataSource = typeof(List<Object>);
+            LaddaInnehåll();
         }
     }
 }

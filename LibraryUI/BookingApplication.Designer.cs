@@ -37,22 +37,21 @@ namespace LibraryUI
             this.buttonAddMember = new System.Windows.Forms.Button();
             this.buttonAddBook = new System.Windows.Forms.Button();
             this.buttonAddBooking = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBooked = new System.Windows.Forms.DataGridView();
             this.textBoxLoaner = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooked)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(22, 19);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(38, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 25);
+            this.label1.Size = new System.Drawing.Size(241, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Skapa bokning";
             // 
@@ -60,52 +59,50 @@ namespace LibraryUI
             // 
             this.dataGridViewMember.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMember.Location = new System.Drawing.Point(16, 98);
-            this.dataGridViewMember.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewMember.Location = new System.Drawing.Point(27, 196);
+            this.dataGridViewMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewMember.Name = "dataGridViewMember";
             this.dataGridViewMember.RowHeadersWidth = 72;
             this.dataGridViewMember.RowTemplate.Height = 37;
-            this.dataGridViewMember.Size = new System.Drawing.Size(523, 172);
+            this.dataGridViewMember.Size = new System.Drawing.Size(897, 344);
             this.dataGridViewMember.TabIndex = 1;
             // 
             // dataGridViewBook
             // 
             this.dataGridViewBook.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBook.Location = new System.Drawing.Point(558, 98);
-            this.dataGridViewBook.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewBook.Location = new System.Drawing.Point(957, 196);
+            this.dataGridViewBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewBook.Name = "dataGridViewBook";
             this.dataGridViewBook.RowHeadersWidth = 72;
             this.dataGridViewBook.RowTemplate.Height = 37;
-            this.dataGridViewBook.Size = new System.Drawing.Size(523, 172);
+            this.dataGridViewBook.Size = new System.Drawing.Size(897, 344);
             this.dataGridViewBook.TabIndex = 2;
             // 
             // Medlemmar
             // 
             this.Medlemmar.AutoSize = true;
-            this.Medlemmar.Location = new System.Drawing.Point(16, 76);
-            this.Medlemmar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Medlemmar.Location = new System.Drawing.Point(27, 152);
             this.Medlemmar.Name = "Medlemmar";
-            this.Medlemmar.Size = new System.Drawing.Size(72, 15);
+            this.Medlemmar.Size = new System.Drawing.Size(125, 30);
             this.Medlemmar.TabIndex = 3;
             this.Medlemmar.Text = "Medlemmar";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(558, 76);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(957, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 15);
+            this.label2.Size = new System.Drawing.Size(75, 30);
             this.label2.TabIndex = 4;
             this.label2.Text = "Böcker";
             // 
             // buttonAddMember
             // 
-            this.buttonAddMember.Location = new System.Drawing.Point(16, 283);
-            this.buttonAddMember.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddMember.Location = new System.Drawing.Point(27, 566);
+            this.buttonAddMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAddMember.Name = "buttonAddMember";
-            this.buttonAddMember.Size = new System.Drawing.Size(95, 27);
+            this.buttonAddMember.Size = new System.Drawing.Size(163, 54);
             this.buttonAddMember.TabIndex = 5;
             this.buttonAddMember.Text = "Lägg till";
             this.buttonAddMember.UseVisualStyleBackColor = true;
@@ -113,10 +110,10 @@ namespace LibraryUI
             // 
             // buttonAddBook
             // 
-            this.buttonAddBook.Location = new System.Drawing.Point(558, 283);
-            this.buttonAddBook.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddBook.Location = new System.Drawing.Point(957, 566);
+            this.buttonAddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAddBook.Name = "buttonAddBook";
-            this.buttonAddBook.Size = new System.Drawing.Size(95, 27);
+            this.buttonAddBook.Size = new System.Drawing.Size(163, 54);
             this.buttonAddBook.TabIndex = 6;
             this.buttonAddBook.Text = "Lägg till bok";
             this.buttonAddBook.UseVisualStyleBackColor = true;
@@ -124,55 +121,55 @@ namespace LibraryUI
             // 
             // buttonAddBooking
             // 
-            this.buttonAddBooking.Location = new System.Drawing.Point(908, 583);
-            this.buttonAddBooking.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonAddBooking.Location = new System.Drawing.Point(1557, 1166);
+            this.buttonAddBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAddBooking.Name = "buttonAddBooking";
-            this.buttonAddBooking.Size = new System.Drawing.Size(95, 27);
+            this.buttonAddBooking.Size = new System.Drawing.Size(163, 54);
             this.buttonAddBooking.TabIndex = 8;
             this.buttonAddBooking.Text = "Skapa";
             this.buttonAddBooking.UseVisualStyleBackColor = true;
             this.buttonAddBooking.Click += new System.EventHandler(this.buttonAddBooking_Click);
             // 
-            // dataGridView1
+            // dataGridViewBooked
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 422);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 72;
-            this.dataGridView1.RowTemplate.Height = 37;
-            this.dataGridView1.Size = new System.Drawing.Size(681, 192);
-            this.dataGridView1.TabIndex = 9;
+            this.dataGridViewBooked.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridViewBooked.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBooked.Location = new System.Drawing.Point(38, 844);
+            this.dataGridViewBooked.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewBooked.Name = "dataGridViewBooked";
+            this.dataGridViewBooked.RowHeadersWidth = 72;
+            this.dataGridViewBooked.RowTemplate.Height = 37;
+            this.dataGridViewBooked.Size = new System.Drawing.Size(1167, 384);
+            this.dataGridViewBooked.TabIndex = 9;
             // 
             // textBoxLoaner
             // 
             this.textBoxLoaner.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxLoaner.Location = new System.Drawing.Point(22, 354);
+            this.textBoxLoaner.Location = new System.Drawing.Point(38, 708);
+            this.textBoxLoaner.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.textBoxLoaner.Multiline = true;
             this.textBoxLoaner.Name = "textBoxLoaner";
             this.textBoxLoaner.ReadOnly = true;
-            this.textBoxLoaner.Size = new System.Drawing.Size(266, 39);
+            this.textBoxLoaner.Size = new System.Drawing.Size(453, 74);
             this.textBoxLoaner.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 336);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(38, 672);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 15);
+            this.label3.Size = new System.Drawing.Size(105, 30);
             this.label3.TabIndex = 11;
             this.label3.Text = "Låntagare";
             // 
             // BookingApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 698);
+            this.ClientSize = new System.Drawing.Size(1925, 1396);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxLoaner);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewBooked);
             this.Controls.Add(this.buttonAddBooking);
             this.Controls.Add(this.buttonAddBook);
             this.Controls.Add(this.buttonAddMember);
@@ -182,12 +179,12 @@ namespace LibraryUI
             this.Controls.Add(this.dataGridViewMember);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BookingApplication";
             this.Text = "BokningsApplication";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooked)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,7 +200,7 @@ namespace LibraryUI
         private System.Windows.Forms.Button buttonAddMember;
         private System.Windows.Forms.Button buttonAddBook;
         private System.Windows.Forms.Button buttonAddBooking;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewBooked;
         private System.Windows.Forms.TextBox textBoxLoaner;
         private System.Windows.Forms.Label label3;
     }

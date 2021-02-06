@@ -9,19 +9,22 @@ namespace LibraryBL
     public class Bokning
     {
         public int Bokningsnummer { get; private set; }
-        public int Medlemsnummer { get; private set; }
-        public int ISBN { get; private set; }
+        public Bok Bok { get; set; }
+        public int ISBN { get { return Bok.ISBN; } }
+        public string Boknamn { get { return Bok.Titel; } }
+        public Medlem Medlem { get; set; }
         public DateTime Starttid { get; private set; }
         public DateTime Sluttid { get; private set; }
         public bool Återlämnad { get; set; }
 
-        internal Bokning(int bokningsnummer, int medlemsnummer, int isbn, DateTime starttid, DateTime sluttid )
+        
+        public Bokning(Bok bok, Medlem medlem, DateTime starttid, DateTime sluttid)
         {
-            Bokningsnummer = bokningsnummer;
-            Medlemsnummer = medlemsnummer;
-            ISBN = isbn;
+            Bok = bok;
+            Medlem = medlem;
             Starttid = starttid;
             Sluttid = sluttid;
         }
+        
     }
 }

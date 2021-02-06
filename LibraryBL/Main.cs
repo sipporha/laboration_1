@@ -46,7 +46,7 @@ namespace LibraryBL
             return libraryData.bokRepository.Tabell;
         }
         
-        public IList<Bokning> HämtaBokning()
+        public List<Bokning> HämtaBokning()
         {
             List<Bokning> notReturned = new List<Bokning>();
             foreach (var item in libraryData.bokningsRepository.Tabell )
@@ -57,7 +57,10 @@ namespace LibraryBL
                 }
             }
             return notReturned;
-            //return libraryData.bokningsRepository.Tabell;
+        }
+        public void LäggTillBokning(Bokning b)
+        {
+            libraryData.bokningsRepository.Tabell.Add(b);
         }
 
     }
