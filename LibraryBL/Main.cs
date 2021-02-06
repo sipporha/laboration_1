@@ -11,6 +11,7 @@ namespace LibraryBL
     {
         private static Main main;
         private LibraryData libraryData;
+        public int bokningsnummer = 0;
 
         public static Main Start()
         {
@@ -36,9 +37,11 @@ namespace LibraryBL
             }
             return false;
         }
+       
         public IList<Medlem> HämtaMedlem()
         {
             return libraryData.medlemRepository.Tabell;
+            
         }
 
         public IList<Bok> HämtaBok()
@@ -61,9 +64,9 @@ namespace LibraryBL
         public void LäggTillBokning(Bokning b)
         {
             libraryData.bokningsRepository.Tabell.Add(b);
+            bokningsnummer++;
         }
 
     }
-
 
 }

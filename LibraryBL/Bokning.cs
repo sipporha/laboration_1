@@ -12,14 +12,16 @@ namespace LibraryBL
         public Bok Bok { get; set; }
         public int ISBN { get { return Bok.ISBN; } }
         public string Boknamn { get { return Bok.Titel; } }
+        public string Låntagare { get { return $"{Medlem.Förnamn} {Medlem.Efternamn}"; } }
         public Medlem Medlem { get; set; }
         public DateTime Starttid { get; private set; }
         public DateTime Sluttid { get; private set; }
         public bool Återlämnad { get; set; }
 
         
-        public Bokning(Bok bok, Medlem medlem, DateTime starttid, DateTime sluttid)
+        public Bokning(int bokningsnummer,Bok bok, Medlem medlem, DateTime starttid, DateTime sluttid)
         {
+            Bokningsnummer = bokningsnummer;
             Bok = bok;
             Medlem = medlem;
             Starttid = starttid;

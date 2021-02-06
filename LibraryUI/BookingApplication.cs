@@ -13,18 +13,21 @@ namespace LibraryUI
     {
         List<Bok> bokadeBöcker;
         readonly Main main;
+     
         Medlem m;
         public BookingApplication()
         {
             InitializeComponent();
             bokadeBöcker = new List<Bok>();
             main = Main.Start();
+            
             LaddaInnehåll();
         }
         public void LaddaInnehåll()
         {
             dataGridViewBook.DataSource = main.HämtaBok();
             dataGridViewBook.RowHeadersVisible = false;
+            dataGridViewBook.Columns["Tillgänglig"].Visible = false;
             dataGridViewBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewBook.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewBook.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -34,6 +37,7 @@ namespace LibraryUI
 
             dataGridViewMember.DataSource = main.HämtaMedlem();
             dataGridViewMember.Columns["Medlemsnummer"].Visible = false;
+            dataGridViewMember.Columns["FullNamn"].Visible = false;
             dataGridViewMember.RowHeadersVisible = false;
             dataGridViewMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewMember.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -42,7 +46,12 @@ namespace LibraryUI
             dataGridViewMember.AllowUserToResizeRows = false;
             dataGridViewMember.AllowUserToAddRows = false;
 
-           
+            dataGridViewBooked.RowHeadersVisible = false;
+            dataGridViewBooked.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewBooked.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewBooked.MultiSelect = false;
+            dataGridViewBooked.AllowUserToResizeRows = false;
+            dataGridViewBooked.AllowUserToAddRows = false;
         }
 
         private void buttonAddMember_Click(object sender, EventArgs e)
@@ -54,12 +63,25 @@ namespace LibraryUI
             DataGridViewRow valdLåntagare = dataGridViewMember.SelectedRows[0];
             m = (Medlem)valdLåntagare.DataBoundItem;
             textBoxLoaner.DataBindings.Clear();
-            
             textBoxLoaner.DataBindings.Add("Text",m, "FullNamn");
         }
 
         private void buttonAddBook_Click(object sender, EventArgs e)
         {
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             if (dataGridViewBook.SelectedRows.Count == 0)
             {
                 return;
@@ -74,7 +96,7 @@ namespace LibraryUI
             var bindingList = new BindingList<Bok>(bokadeBöcker);
             var source = new BindingSource(bindingList, null);
             dataGridViewBooked.DataSource = source;
-
+            LaddaInnehåll();
             //TODO: fixa till sen så att view blir snyggare...
         }
 
@@ -82,9 +104,12 @@ namespace LibraryUI
         {
             foreach (var item in bokadeBöcker)
             {
-                main.LäggTillBokning(new Bokning(item, m,DateTime.Now,DateTime.Now.AddDays(30)));
+                main.LäggTillBokning(new Bokning(main.bokningsnummer, item, m,DateTime.Now,DateTime.Now.AddDays(30)));
                 item.Tillgänglig = false;
             }
+            MessageBox.Show($"Bokningen har sparats!\nBokningsnummer {main.bokningsnummer}");
+            dataGridViewBooked.Rows.Clear();
+            textBoxLoaner.Clear();
         }
 
     }

@@ -14,7 +14,6 @@ namespace LibraryUI
 {
     public partial class Login : Form
     {
-      
         private Main main;
 
         public Login()
@@ -32,11 +31,8 @@ namespace LibraryUI
             LibraryApplication libraryApplication = new LibraryApplication();
             libraryApplication.Show();
             this.Hide();
-
-            //
-            /*
              
-             
+            /* 
            //Lägga till med tryparse istället.
             foreach (char item in textBoxUsername.Text)
             {
@@ -62,8 +58,8 @@ namespace LibraryUI
             {
                 labelFelInput.Text = "Lösenordet och/eller användarnamn var fel!";
             }
-        */
-           
+        
+          */
         }
     }
 }

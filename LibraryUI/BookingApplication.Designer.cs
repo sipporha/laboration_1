@@ -40,6 +40,9 @@ namespace LibraryUI
             this.dataGridViewBooked = new System.Windows.Forms.DataGridView();
             this.textBoxLoaner = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooked)).BeginInit();
@@ -59,30 +62,30 @@ namespace LibraryUI
             // 
             this.dataGridViewMember.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMember.Location = new System.Drawing.Point(27, 196);
+            this.dataGridViewMember.Location = new System.Drawing.Point(59, 192);
             this.dataGridViewMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewMember.Name = "dataGridViewMember";
             this.dataGridViewMember.RowHeadersWidth = 72;
             this.dataGridViewMember.RowTemplate.Height = 37;
-            this.dataGridViewMember.Size = new System.Drawing.Size(897, 344);
+            this.dataGridViewMember.Size = new System.Drawing.Size(897, 280);
             this.dataGridViewMember.TabIndex = 1;
             // 
             // dataGridViewBook
             // 
             this.dataGridViewBook.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBook.Location = new System.Drawing.Point(957, 196);
+            this.dataGridViewBook.Location = new System.Drawing.Point(59, 678);
             this.dataGridViewBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewBook.Name = "dataGridViewBook";
             this.dataGridViewBook.RowHeadersWidth = 72;
             this.dataGridViewBook.RowTemplate.Height = 37;
-            this.dataGridViewBook.Size = new System.Drawing.Size(897, 344);
+            this.dataGridViewBook.Size = new System.Drawing.Size(897, 585);
             this.dataGridViewBook.TabIndex = 2;
             // 
             // Medlemmar
             // 
             this.Medlemmar.AutoSize = true;
-            this.Medlemmar.Location = new System.Drawing.Point(27, 152);
+            this.Medlemmar.Location = new System.Drawing.Point(59, 148);
             this.Medlemmar.Name = "Medlemmar";
             this.Medlemmar.Size = new System.Drawing.Size(125, 30);
             this.Medlemmar.TabIndex = 3;
@@ -91,7 +94,7 @@ namespace LibraryUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(957, 152);
+            this.label2.Location = new System.Drawing.Point(59, 633);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 30);
             this.label2.TabIndex = 4;
@@ -99,7 +102,7 @@ namespace LibraryUI
             // 
             // buttonAddMember
             // 
-            this.buttonAddMember.Location = new System.Drawing.Point(27, 566);
+            this.buttonAddMember.Location = new System.Drawing.Point(59, 480);
             this.buttonAddMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAddMember.Name = "buttonAddMember";
             this.buttonAddMember.Size = new System.Drawing.Size(163, 54);
@@ -110,7 +113,7 @@ namespace LibraryUI
             // 
             // buttonAddBook
             // 
-            this.buttonAddBook.Location = new System.Drawing.Point(957, 566);
+            this.buttonAddBook.Location = new System.Drawing.Point(59, 1284);
             this.buttonAddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAddBook.Name = "buttonAddBook";
             this.buttonAddBook.Size = new System.Drawing.Size(163, 54);
@@ -121,7 +124,7 @@ namespace LibraryUI
             // 
             // buttonAddBooking
             // 
-            this.buttonAddBooking.Location = new System.Drawing.Point(1557, 1166);
+            this.buttonAddBooking.Location = new System.Drawing.Point(1294, 818);
             this.buttonAddBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAddBooking.Name = "buttonAddBooking";
             this.buttonAddBooking.Size = new System.Drawing.Size(163, 54);
@@ -134,39 +137,70 @@ namespace LibraryUI
             // 
             this.dataGridViewBooked.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewBooked.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBooked.Location = new System.Drawing.Point(38, 844);
+            this.dataGridViewBooked.Location = new System.Drawing.Point(1294, 1026);
             this.dataGridViewBooked.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewBooked.Name = "dataGridViewBooked";
             this.dataGridViewBooked.RowHeadersWidth = 72;
             this.dataGridViewBooked.RowTemplate.Height = 37;
-            this.dataGridViewBooked.Size = new System.Drawing.Size(1167, 384);
+            this.dataGridViewBooked.Size = new System.Drawing.Size(503, 237);
             this.dataGridViewBooked.TabIndex = 9;
             // 
             // textBoxLoaner
             // 
             this.textBoxLoaner.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxLoaner.Location = new System.Drawing.Point(38, 708);
+            this.textBoxLoaner.Location = new System.Drawing.Point(1294, 341);
             this.textBoxLoaner.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.textBoxLoaner.Multiline = true;
             this.textBoxLoaner.Name = "textBoxLoaner";
             this.textBoxLoaner.ReadOnly = true;
-            this.textBoxLoaner.Size = new System.Drawing.Size(453, 74);
+            this.textBoxLoaner.Size = new System.Drawing.Size(503, 74);
             this.textBoxLoaner.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 672);
+            this.label3.Location = new System.Drawing.Point(1294, 305);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 30);
             this.label3.TabIndex = 11;
             this.label3.Text = "Låntagare";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(1294, 196);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(237, 38);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Skapa ny bokning";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 30;
+            this.listBox1.Location = new System.Drawing.Point(1294, 480);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(503, 304);
+            this.listBox1.TabIndex = 13;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1294, 447);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 30);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Boklista";
             // 
             // BookingApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1925, 1396);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxLoaner);
             this.Controls.Add(this.dataGridViewBooked);
@@ -203,5 +237,8 @@ namespace LibraryUI
         private System.Windows.Forms.DataGridView dataGridViewBooked;
         private System.Windows.Forms.TextBox textBoxLoaner;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

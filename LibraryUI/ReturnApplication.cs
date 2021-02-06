@@ -24,14 +24,14 @@ namespace LibraryUI
         {
             dataGridViewBooking.DataSource = main.HämtaBokning();
             dataGridViewBooking.RowHeadersVisible = false;
+            dataGridViewBooking.Columns["Bok"].Visible = false;
+            dataGridViewBooking.Columns["Medlem"].Visible = false;
             dataGridViewBooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewBooking.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewBooking.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewBooking.MultiSelect = false;
             dataGridViewBooking.AllowUserToResizeRows = false;
             dataGridViewBooking.AllowUserToAddRows = false;
-
-            
         }
 
         private void buttonCancelBooking_Click(object sender, EventArgs e)
@@ -45,18 +45,14 @@ namespace LibraryUI
                 {
                     item.Återlämnad = true;
                 }
-             
             }
-
-            dataGridViewBooking.DataSource = typeof(List<Object>);
-           LaddaInnehåll();
-
+            dataGridViewBooking.DataSource = typeof(List<Bokning>);
+            LaddaInnehåll();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show(main.HämtaBokning().Count+"");
-            dataGridViewBooking.DataSource = typeof(List<Object>);
+            dataGridViewBooking.DataSource = typeof(List<Bokning>);
             LaddaInnehåll();
         }
     }

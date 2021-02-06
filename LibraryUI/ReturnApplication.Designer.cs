@@ -34,6 +34,7 @@ namespace LibraryUI
             this.label2 = new System.Windows.Forms.Label();
             this.buttonCancelBooking = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooking)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,31 +71,41 @@ namespace LibraryUI
             // 
             // buttonCancelBooking
             // 
-            this.buttonCancelBooking.BackColor = System.Drawing.Color.Salmon;
-            this.buttonCancelBooking.Location = new System.Drawing.Point(38, 618);
+            this.buttonCancelBooking.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.buttonCancelBooking.Location = new System.Drawing.Point(38, 802);
             this.buttonCancelBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancelBooking.Name = "buttonCancelBooking";
-            this.buttonCancelBooking.Size = new System.Drawing.Size(163, 54);
+            this.buttonCancelBooking.Size = new System.Drawing.Size(187, 54);
             this.buttonCancelBooking.TabIndex = 9;
-            this.buttonCancelBooking.Text = "Avsluta";
+            this.buttonCancelBooking.Text = "Avsluta bokning";
             this.buttonCancelBooking.UseVisualStyleBackColor = false;
             this.buttonCancelBooking.Click += new System.EventHandler(this.buttonCancelBooking_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(588, 692);
+            this.button1.Location = new System.Drawing.Point(38, 604);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 40);
+            this.button1.Size = new System.Drawing.Size(320, 52);
             this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
+            this.button1.Text = "Uppdatera lista";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 753);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(321, 30);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Är boken/böckerna återlämnade?";
             // 
             // ReturnApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1901, 1494);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonCancelBooking);
             this.Controls.Add(this.label2);
@@ -117,5 +128,6 @@ namespace LibraryUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonCancelBooking;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 }
