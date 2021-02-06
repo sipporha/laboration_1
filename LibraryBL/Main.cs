@@ -9,7 +9,6 @@ namespace LibraryBL
 {
     public class Main
     {
-        // test
         private static Main main;
         private LibraryData libraryData;
 

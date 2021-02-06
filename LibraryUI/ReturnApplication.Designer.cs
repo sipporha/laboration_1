@@ -85,7 +85,7 @@ namespace LibraryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 550);
+            this.ClientSize = new System.Drawing.Size(1109, 747);
             this.Controls.Add(this.buttonCancelBooking);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewBooking);

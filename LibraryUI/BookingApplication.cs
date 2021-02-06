@@ -42,17 +42,23 @@ namespace LibraryUI
 
         private void buttonAddMember_Click(object sender, EventArgs e)
         {
-            //dataGridView1.Columns.Add("Medlemsnummer", "medlem");
-            //dataGridView1.Rows.Add(dataGridViewMember.Rows[0].ToString());
-
+            if (dataGridViewMember.SelectedRows.Count==0)
+            {
+                return;
+            }
+            DataGridViewRow valdLåntagare = dataGridViewMember.SelectedRows[0];
+            Medlem m = (Medlem)valdLåntagare.DataBoundItem;
+            textBoxLoaner.DataBindings.Clear();
+            textBoxLoaner.DataBindings.Add("Text",m,"FullNamn");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
 
         private void buttonAddBooking_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddBook_Click(object sender, EventArgs e)
         {
 
         }
