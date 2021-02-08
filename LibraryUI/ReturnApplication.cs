@@ -33,6 +33,12 @@ namespace LibraryUI
             dataGridViewBooking.AllowUserToResizeRows = false;
             dataGridViewBooking.AllowUserToAddRows = false;
         }
+        public void UppdateraInnehåll()
+        {
+            dataGridViewBooking.DataSource = typeof(List<Bokning>);
+            LaddaInnehåll();
+        }
+
 
         private void buttonCancelBooking_Click(object sender, EventArgs e)
         {

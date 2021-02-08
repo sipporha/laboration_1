@@ -44,9 +44,9 @@ namespace LibraryBL
             
         }
 
-        public IList<Bok> HämtaBok()
+        public List<Bok> HämtaBok()
         {
-            return libraryData.bokRepository.Tabell;
+            return (List<Bok>)libraryData.bokRepository.Tabell;
         }
         
         public List<Bokning> HämtaBokning()
@@ -61,10 +61,10 @@ namespace LibraryBL
             }
             return notReturned;
         }
-        public void LäggTillBokning(Bokning b)
+        public void LäggTillBokning(Bok b, Medlem m)
         {
-            libraryData.bokningsRepository.Tabell.Add(b);
-            bokningsnummer++;
+            Bokning bokning = new Bokning(++bokningsnummer,b,m,DateTime.Now,DateTime.Now.AddDays(30));
+            libraryData.bokningsRepository.Tabell.Add(bokning);
         }
 
     }

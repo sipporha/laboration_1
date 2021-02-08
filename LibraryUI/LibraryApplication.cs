@@ -31,6 +31,7 @@ namespace LibraryUI
             returnApplication.Hide();
             bookingApplication.Show();
             bookingApplication.Location = center;
+            bookingApplication.UppdateraInnehåll();
         }
 
         private void toolStripMenuReturn_Click(object sender, EventArgs e)
@@ -38,6 +39,7 @@ namespace LibraryUI
             bookingApplication.Hide();
             returnApplication.Show();
             returnApplication.Location = center;
+            returnApplication.UppdateraInnehåll();
         }
 
         private void LibraryApplication_FormClosed(object sender, FormClosedEventArgs e)

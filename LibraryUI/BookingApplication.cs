@@ -13,14 +13,13 @@ namespace LibraryUI
     {
         List<Bok> bokadeBöcker;
         readonly Main main;
-     
         Medlem m;
+
         public BookingApplication()
         {
             InitializeComponent();
             bokadeBöcker = new List<Bok>();
             main = Main.Start();
-            
             LaddaInnehåll();
         }
         public void LaddaInnehåll()
@@ -54,6 +53,19 @@ namespace LibraryUI
             dataGridViewBooked.AllowUserToAddRows = false;
         }
 
+        public void UppdateraInnehåll()
+        {
+            List<Bok> TillgänligaBöcker = new List<Bok>();
+            foreach (var item in main.HämtaBok())
+            {
+                if (item.Tillgänglig)
+                {
+                    TillgänligaBöcker.Add(item);
+                }
+            }
+            dataGridViewBook.DataSource = TillgänligaBöcker;
+        }
+
         private void buttonAddMember_Click(object sender, EventArgs e)
         {
             if (dataGridViewMember.SelectedRows.Count==0)
@@ -68,20 +80,6 @@ namespace LibraryUI
 
         private void buttonAddBook_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             if (dataGridViewBook.SelectedRows.Count == 0)
             {
                 return;
@@ -98,19 +96,31 @@ namespace LibraryUI
             dataGridViewBooked.DataSource = source;
             LaddaInnehåll();
             //TODO: fixa till sen så att view blir snyggare...
+            dataGridViewBooked.Columns["Tillgänglig"].Visible = false;
+
         }
+
 
         private void buttonAddBooking_Click(object sender, EventArgs e)
         {
+            if (m==null)
+            {
+                MessageBox.Show("Användare ej vald...");
+                return;
+            }
+
             foreach (var item in bokadeBöcker)
             {
-                main.LäggTillBokning(new Bokning(main.bokningsnummer, item, m,DateTime.Now,DateTime.Now.AddDays(30)));
+                main.LäggTillBokning(item, m);
                 item.Tillgänglig = false;
             }
-            MessageBox.Show($"Bokningen har sparats!\nBokningsnummer {main.bokningsnummer}");
+            MessageBox.Show("Skiten är sparad...","Grattis!");
             dataGridViewBooked.Rows.Clear();
             textBoxLoaner.Clear();
+            m = null;
+            UppdateraInnehåll();
+            
         }
-
+        
     }
 }

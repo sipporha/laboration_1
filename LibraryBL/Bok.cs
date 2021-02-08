@@ -16,6 +16,7 @@ namespace LibraryBL
         {
             ISBN = isbn;
             Titel = titel;
+            Tillgänglig = true;
         }
 
 
