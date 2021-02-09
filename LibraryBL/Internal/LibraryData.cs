@@ -20,7 +20,7 @@ namespace LibraryBL.Internal
             bokRepository = new Repository<Bok>();
             medlemRepository = new Repository<Medlem>();
             personalRepository = new Repository<Personal>();
-            fakturaRepository = new Repository<Faktura>(); //TODO: Kolla om det behövs
+            fakturaRepository = new Repository<Faktura>(); 
             bokningsRepository = new Repository<Bokning>();
             LaddaData();
         }
@@ -51,7 +51,6 @@ namespace LibraryBL.Internal
 
             bokningsRepository.Tabell.Add(new Bokning(1, bokRepository.Tabell[0], medlemRepository.Tabell[1], DateTime.Now, new DateTime(2021,02,05)));
             bokningsRepository.Tabell.Add(new Bokning(2, bokRepository.Tabell[1], medlemRepository.Tabell[2], DateTime.Now, new DateTime(1982,05,07)));
-
 
             bokRepository.Tabell[0].Tillgänglig = false;
             bokRepository.Tabell[1].Tillgänglig = false;

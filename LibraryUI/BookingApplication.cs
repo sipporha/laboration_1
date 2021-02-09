@@ -109,8 +109,7 @@ namespace LibraryUI
         {
             if (m==null)
             {
-                labelLåntagareFail.Text="Du måste välja användare!";
-                //MessageBox.Show("Användare ej vald...");
+                labelLåntagareFail.Text="Du måste välja användare!";   
                 return;
             }
 
