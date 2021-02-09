@@ -44,8 +44,14 @@ namespace LibraryUI
 
         private void LibraryApplication_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (MessageBox.Show("Är du säker på att du vill avsluta?", "Bekräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                // user clicked yes
+                Application.Exit();
+            }
+            return;
             //TODO: Om jag orkar en messagebox med val...
-            Application.Exit();
+            
         }
     }
 }

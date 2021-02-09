@@ -87,9 +87,9 @@ namespace LibraryUI
             this.labelFelInput.Location = new System.Drawing.Point(179, 722);
             this.labelFelInput.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFelInput.Name = "labelFelInput";
-            this.labelFelInput.Size = new System.Drawing.Size(88, 30);
+            this.labelFelInput.Size = new System.Drawing.Size(47, 30);
             this.labelFelInput.TabIndex = 4;
-            this.labelFelInput.Text = "test text";
+            this.labelFelInput.Text = "test";
             this.labelFelInput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login

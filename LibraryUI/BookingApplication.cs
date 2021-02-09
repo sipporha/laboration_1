@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -21,6 +22,7 @@ namespace LibraryUI
             bokadeBöcker = new List<Bok>();
             main = Main.Start();
             LaddaInnehåll();
+            UppdateraInnehåll();
         }
         public void LaddaInnehåll()
         {
@@ -28,7 +30,7 @@ namespace LibraryUI
             dataGridViewBook.RowHeadersVisible = false;
             dataGridViewBook.Columns["Tillgänglig"].Visible = false;
             dataGridViewBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewBook.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewBook.Columns["Titel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewBook.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewBook.MultiSelect = false;
             dataGridViewBook.AllowUserToResizeRows = false;
@@ -39,7 +41,7 @@ namespace LibraryUI
             dataGridViewMember.Columns["FullNamn"].Visible = false;
             dataGridViewMember.RowHeadersVisible = false;
             dataGridViewMember.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewMember.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewMember.Columns["Epost"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewMember.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewMember.MultiSelect = false;
             dataGridViewMember.AllowUserToResizeRows = false;
@@ -48,6 +50,7 @@ namespace LibraryUI
             dataGridViewBooked.RowHeadersVisible = false;
             dataGridViewBooked.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewBooked.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            
             dataGridViewBooked.MultiSelect = false;
             dataGridViewBooked.AllowUserToResizeRows = false;
             dataGridViewBooked.AllowUserToAddRows = false;
@@ -55,6 +58,7 @@ namespace LibraryUI
 
         public void UppdateraInnehåll()
         {
+           
             List<Bok> TillgänligaBöcker = new List<Bok>();
             foreach (var item in main.HämtaBok())
             {
@@ -63,7 +67,9 @@ namespace LibraryUI
                     TillgänligaBöcker.Add(item);
                 }
             }
+           
             dataGridViewBook.DataSource = TillgänligaBöcker;
+            textBoxLoaner.Text = "";
         }
 
         private void buttonAddMember_Click(object sender, EventArgs e)
@@ -86,18 +92,16 @@ namespace LibraryUI
             }
             DataGridViewRow valdBok = dataGridViewBook.SelectedRows[0];
             Bok b = (Bok)valdBok.DataBoundItem;
-            
+
             if (!bokadeBöcker.Contains(b))
             {
                 bokadeBöcker.Add(b);
             }
             var bindingList = new BindingList<Bok>(bokadeBöcker);
             var source = new BindingSource(bindingList, null);
-            dataGridViewBooked.DataSource = source;
-            LaddaInnehåll();
-            //TODO: fixa till sen så att view blir snyggare...
+            dataGridViewBooked.DataSource = source; 
             dataGridViewBooked.Columns["Tillgänglig"].Visible = false;
-
+            dataGridViewBooked.Columns["Titel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
 
@@ -105,7 +109,8 @@ namespace LibraryUI
         {
             if (m==null)
             {
-                MessageBox.Show("Användare ej vald...");
+                labelLåntagareFail.Text="Du måste välja användare!";
+                //MessageBox.Show("Användare ej vald...");
                 return;
             }
 
@@ -114,13 +119,17 @@ namespace LibraryUI
                 main.LäggTillBokning(item, m);
                 item.Tillgänglig = false;
             }
-            MessageBox.Show("Skiten är sparad...","Grattis!");
-            dataGridViewBooked.Rows.Clear();
-            textBoxLoaner.Clear();
+            labelLåntagareFail.Text= "";
+            MessageBox.Show("Bokning är sparad!","Meddelande");
+            dataGridViewBooked.Rows.Clear();  
             m = null;
             UppdateraInnehåll();
+            textBoxLoaner.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             
         }
-        
     }
 }

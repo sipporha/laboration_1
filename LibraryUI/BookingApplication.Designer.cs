@@ -41,8 +41,9 @@ namespace LibraryUI
             this.textBoxLoaner = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.labelLåntagareFail = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooked)).BeginInit();
@@ -169,20 +170,11 @@ namespace LibraryUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(1439, 658);
+            this.label4.Location = new System.Drawing.Point(1439, 646);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(186, 30);
             this.label4.TabIndex = 12;
             this.label4.Text = "Skapa ny bokning?";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 30;
-            this.listBox1.Location = new System.Drawing.Point(1141, 881);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(646, 304);
-            this.listBox1.TabIndex = 13;
             // 
             // label5
             // 
@@ -193,13 +185,34 @@ namespace LibraryUI
             this.label5.TabIndex = 14;
             this.label5.Text = "Boklista";
             // 
+            // labelLåntagareFail
+            // 
+            this.labelLåntagareFail.AutoSize = true;
+            this.labelLåntagareFail.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelLåntagareFail.Location = new System.Drawing.Point(1463, 305);
+            this.labelLåntagareFail.Name = "labelLåntagareFail";
+            this.labelLåntagareFail.Size = new System.Drawing.Size(57, 30);
+            this.labelLåntagareFail.TabIndex = 15;
+            this.labelLåntagareFail.Text = "label";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(351, 1221);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(131, 40);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BookingApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1925, 1396);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelLåntagareFail);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxLoaner);
@@ -238,7 +251,8 @@ namespace LibraryUI
         private System.Windows.Forms.TextBox textBoxLoaner;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelLåntagareFail;
+        private System.Windows.Forms.Button button1;
     }
 }

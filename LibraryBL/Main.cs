@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace LibraryBL
 {
@@ -41,7 +42,6 @@ namespace LibraryBL
         public IList<Medlem> HämtaMedlem()
         {
             return libraryData.medlemRepository.Tabell;
-            
         }
 
         public List<Bok> HämtaBok()
@@ -67,6 +67,26 @@ namespace LibraryBL
             libraryData.bokningsRepository.Tabell.Add(bokning);
         }
 
+        public void SkapaFaktura(Bokning bokning, double totalpris)
+        {
+            Faktura faktura = new Faktura(bokning,totalpris);
+            bokning.Faktura = faktura;
+
+        }
+
+        public List<Faktura> HämtaFaktura()
+        {
+            List<Faktura> Fakturor = new List<Faktura>();
+            foreach (var item in libraryData.bokningsRepository.Tabell)
+            {
+                if (item.Faktura!=null)
+                {
+                   Fakturor.Add(item.Faktura);
+                }
+
+            }
+            return Fakturor;
+        }
     }
 
 }

@@ -8,17 +8,18 @@ namespace LibraryBL
 {
     public class Faktura // Lite osäker på om vi verkligen behöver alla dessa properties i denna klassen...??
     {
-        public Bokning Bokningsnummer { get; private set; }
-        public Bokning Starttid { get; private set; }
-        public Bokning Sluttid { get; private set; }
-        public float Totalpris { get; private set; }
+        public Bokning Bokning { get; private set; }
+        public int Bokningsnummer { get { return Bokning.Bokningsnummer; } }
+        public int Medlemsnummer { get { return Bokning.Medlem.Medlemsnummer; } }
+        public string Boktitel { get { return Bokning.Bok.Titel; } }
+        public double Totalpris { get; private set; }
+        public double ÅterståendeSumma { get; set; }
 
-        internal Faktura(Bokning bokningsnummer, Bokning starttid, Bokning sluttid, float totalpris)
+        internal Faktura(Bokning bokning, double totalpris)
         {
-            Bokningsnummer = bokningsnummer;
-            Starttid = starttid;
-            Sluttid = sluttid;
+            Bokning = bokning;
             Totalpris = totalpris;
+            ÅterståendeSumma = totalpris;
         }
     }
 }

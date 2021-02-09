@@ -13,10 +13,12 @@ namespace LibraryBL
         public int ISBN { get { return Bok.ISBN; } }
         public string Boknamn { get { return Bok.Titel; } }
         public string Låntagare { get { return $"{Medlem.Förnamn} {Medlem.Efternamn}"; } }
+        
         public Medlem Medlem { get; set; }
         public DateTime Starttid { get; private set; }
         public DateTime Sluttid { get; private set; }
         public bool Återlämnad { get; set; }
+        public Faktura Faktura { get; set; }
 
         
         public Bokning(int bokningsnummer,Bok bok, Medlem medlem, DateTime starttid, DateTime sluttid)
@@ -26,6 +28,7 @@ namespace LibraryBL
             Medlem = medlem;
             Starttid = starttid;
             Sluttid = sluttid;
+            Faktura = null;
         }
         
     }
