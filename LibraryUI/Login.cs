@@ -47,6 +47,7 @@ namespace LibraryUI
 
             if (main.LoggaIn(textBoxUsername.Text, textBoxPassword.Text))
             {
+                MessageBox.Show($"Inloggad som användare: {textBoxUsername.Text}", "Inloggning lyckades", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LibraryApplication libraryApplication = new LibraryApplication();
                 libraryApplication.Show();
                 this.Hide();

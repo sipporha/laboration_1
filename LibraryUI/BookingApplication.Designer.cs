@@ -221,7 +221,6 @@ namespace LibraryUI
             this.labelFailBok.Size = new System.Drawing.Size(32, 15);
             this.labelFailBok.TabIndex = 16;
             this.labelFailBok.Text = "label";
-            this.labelFailBok.Click += new System.EventHandler(this.label6_Click);
             // 
             // BookingApplication
             // 

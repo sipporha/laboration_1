@@ -83,12 +83,13 @@ namespace LibraryUI
                         double x = Math.Floor((DateTime.Now.Date-item.Sluttid).TotalDays * 10);
                         if (x>0)
                         {
-                            MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!");
+                            MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             main.SkapaFaktura(item, x);
                         }
                     }
                 }
             }
+            MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             dataGridViewBooking.DataSource = typeof(List<Bokning>);
             LaddaInnehåll();
         }
@@ -105,12 +106,12 @@ namespace LibraryUI
             Faktura f = (Faktura)valdFaktura.DataBoundItem;
             if (f.ÅterståendeSumma == 0)
             {
-                MessageBox.Show("Fakturan är redan betald!", "Notis");
+                MessageBox.Show("Fakturan är redan betald!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 f.ÅterståendeSumma = 0;
-                MessageBox.Show("Betalningen lyckades!", "Notis");
+                MessageBox.Show("Betalningen lyckades!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             LaddaInnehåll();
         }

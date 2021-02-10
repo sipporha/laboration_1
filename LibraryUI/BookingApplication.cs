@@ -135,16 +135,11 @@ namespace LibraryUI
 
             labelLåntagareFail.Text="";
             labelFailBok.Text = "";
-            MessageBox.Show("Bokning är sparad!","Meddelande");
+            MessageBox.Show("Bokning är sparad!","Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
             dataGridViewBooked.Rows.Clear();  
             m = null;
             UppdateraInnehåll();
             textBoxLoaner.Text = "";
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
