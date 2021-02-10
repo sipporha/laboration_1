@@ -39,7 +39,7 @@ namespace LibraryUI
             }
 
             int x;
-            if (!Int32.TryParse(textBoxUsername.Text, out x))s
+            if (!Int32.TryParse(textBoxUsername.Text, out x))
             {
                 labelFelInput.Text = "Inga bokstäver tillåtna!";
                 return;

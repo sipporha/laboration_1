@@ -64,6 +64,10 @@ namespace LibraryBL
             return (List<Bok>)libraryData.bokRepository.Tabell;
         }
         
+        /// <summary>
+        /// Metoder skapar en lista och lägger bokade böcker i den innan den returnerar den.
+        /// </summary>
+        /// <returns></returns>
         public List<Bokning> HämtaBokning()
         {
             List<Bokning> notReturned = new List<Bokning>();
