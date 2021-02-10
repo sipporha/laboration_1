@@ -32,16 +32,16 @@ namespace LibraryUI
         /// <param name="e"></param>
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            int x;
-            if (!Int32.TryParse(textBoxUsername.Text, out x))
-            {
-                labelFelInput.Text = "Inga bokstäver tillåtna!";
-                return;
-            }
-
             if (textBoxUsername.Text == "" && textBoxPassword.Text == "")
             {
                 labelFelInput.Text = "Fält får inte lämnas tomma.";
+                return;
+            }
+
+            int x;
+            if (!Int32.TryParse(textBoxUsername.Text, out x))s
+            {
+                labelFelInput.Text = "Inga bokstäver tillåtna!";
                 return;
             }
 
