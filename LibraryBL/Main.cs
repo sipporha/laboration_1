@@ -14,6 +14,10 @@ namespace LibraryBL
         private LibraryData libraryData;
         public int bokningsnummer = 0;
 
+        /// <summary>
+        /// Skapar en ny instans av main som fungerar som en Singleton klass.
+        /// </summary>
+        /// <returns></returns>
         public static Main Start()
         {
             if (main == null)
@@ -23,10 +27,21 @@ namespace LibraryBL
             return main;
 
         }
+
+        /// <summary>
+        /// Denna metod skapar och alddar in all data programmet har att jobba med.
+        /// </summary>
         public Main()
         {
             libraryData = new LibraryData();
         }
+
+        /// <summary>
+        /// Metod som kallas på när man försöker logga in i systemet som jämför inmatade inloggningsuppgifter mot de användare som finns lagrade.
+        /// </summary>
+        /// <param name="användarnamn"></param>
+        /// <param name="lösenord"></param>
+        /// <returns></returns>
         public bool LoggaIn(string användarnamn, string lösenord)
         {
             foreach (var x in libraryData.personalRepository.Tabell)
@@ -61,12 +76,23 @@ namespace LibraryBL
             }
             return notReturned;
         }
+
+        /// <summary>
+        /// Skapar en ny bokning med ett låneintervall på 30 dagar.
+        /// </summary>
+        /// <param name="b"></param>
+        /// <param name="m"></param>
         public void LäggTillBokning(Bok b, Medlem m)
         {
             Bokning bokning = new Bokning(++bokningsnummer,b,m,DateTime.Now,DateTime.Now.AddDays(30));
             libraryData.bokningsRepository.Tabell.Add(bokning);
         }
 
+        /// <summary>
+        /// Skapar en faktura endast om en bokning passerat 30 dagar.
+        /// </summary>
+        /// <param name="bokning"></param>
+        /// <param name="totalpris"></param>
         public void SkapaFaktura(Bokning bokning, double totalpris)
         {
             Faktura faktura = new Faktura(bokning,totalpris);
@@ -83,7 +109,6 @@ namespace LibraryBL
                 {
                    Fakturor.Add(item.Faktura);
                 }
-
             }
             return Fakturor;
         }

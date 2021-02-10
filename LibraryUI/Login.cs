@@ -20,28 +20,25 @@ namespace LibraryUI
         {
             main = Main.Start();
             InitializeComponent();
+            labelFelInput.Text = "";
         }
 
         private void Login_Load(object sender, EventArgs e) { }
         
-
+        /// <summary>
+        /// Loggar in en användare i systemet förutsatt att man skriver rätt inloggningsuppgifter.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            // För att slippa logga in hela tiden, tas bort sedan
-            LibraryApplication libraryApplication = new LibraryApplication();
-            libraryApplication.Show();
-            this.Hide();
-             
-            /* 
-           //Lägga till med tryparse istället.
-            foreach (char item in textBoxUsername.Text)
+            int x;
+            if (!Int32.TryParse(textBoxUsername.Text, out x))
             {
-                if (!Char.IsDigit(item))
-                {
-                    labelFelInput.Text = "Inga bokstäver tillåtna!";
-                    return;
-                }
+                labelFelInput.Text = "Inga bokstäver tillåtna!";
+                return;
             }
+
             if (textBoxUsername.Text == "" && textBoxPassword.Text == "")
             {
                 labelFelInput.Text = "Fält får inte lämnas tomma.";
@@ -58,8 +55,6 @@ namespace LibraryUI
             {
                 labelFelInput.Text = "Lösenordet och/eller användarnamn var fel!";
             }
-        
-          */
         }
     }
 }

@@ -43,7 +43,7 @@ namespace LibraryUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelLåntagareFail = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.labelFailBok = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBook)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooked)).BeginInit();
@@ -52,10 +52,11 @@ namespace LibraryUI
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(38, 38);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(22, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 46);
+            this.label1.Size = new System.Drawing.Size(183, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Skapa bokning";
             // 
@@ -63,125 +64,139 @@ namespace LibraryUI
             // 
             this.dataGridViewMember.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMember.Location = new System.Drawing.Point(50, 229);
-            this.dataGridViewMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewMember.Location = new System.Drawing.Point(22, 110);
+            this.dataGridViewMember.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewMember.Name = "dataGridViewMember";
             this.dataGridViewMember.RowHeadersWidth = 72;
             this.dataGridViewMember.RowTemplate.Height = 37;
-            this.dataGridViewMember.Size = new System.Drawing.Size(897, 280);
+            this.dataGridViewMember.Size = new System.Drawing.Size(523, 140);
             this.dataGridViewMember.TabIndex = 1;
             // 
             // dataGridViewBook
             // 
             this.dataGridViewBook.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBook.Location = new System.Drawing.Point(50, 715);
-            this.dataGridViewBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewBook.Location = new System.Drawing.Point(22, 354);
+            this.dataGridViewBook.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewBook.Name = "dataGridViewBook";
             this.dataGridViewBook.RowHeadersWidth = 72;
             this.dataGridViewBook.RowTemplate.Height = 37;
-            this.dataGridViewBook.Size = new System.Drawing.Size(897, 470);
+            this.dataGridViewBook.Size = new System.Drawing.Size(523, 235);
             this.dataGridViewBook.TabIndex = 2;
             // 
             // Medlemmar
             // 
             this.Medlemmar.AutoSize = true;
-            this.Medlemmar.Location = new System.Drawing.Point(50, 185);
+            this.Medlemmar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Medlemmar.Location = new System.Drawing.Point(22, 82);
+            this.Medlemmar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Medlemmar.Name = "Medlemmar";
-            this.Medlemmar.Size = new System.Drawing.Size(125, 30);
+            this.Medlemmar.Size = new System.Drawing.Size(99, 21);
             this.Medlemmar.TabIndex = 3;
             this.Medlemmar.Text = "Medlemmar";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 670);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(22, 325);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 30);
+            this.label2.Size = new System.Drawing.Size(61, 21);
             this.label2.TabIndex = 4;
             this.label2.Text = "Böcker";
             // 
             // buttonAddMember
             // 
-            this.buttonAddMember.Location = new System.Drawing.Point(50, 517);
-            this.buttonAddMember.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddMember.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonAddMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddMember.Location = new System.Drawing.Point(22, 254);
+            this.buttonAddMember.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddMember.Name = "buttonAddMember";
-            this.buttonAddMember.Size = new System.Drawing.Size(163, 54);
+            this.buttonAddMember.Size = new System.Drawing.Size(95, 27);
             this.buttonAddMember.TabIndex = 5;
             this.buttonAddMember.Text = "Lägg till";
-            this.buttonAddMember.UseVisualStyleBackColor = true;
+            this.buttonAddMember.UseVisualStyleBackColor = false;
             this.buttonAddMember.Click += new System.EventHandler(this.buttonAddMember_Click);
             // 
             // buttonAddBook
             // 
-            this.buttonAddBook.Location = new System.Drawing.Point(50, 1214);
-            this.buttonAddBook.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddBook.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonAddBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddBook.Location = new System.Drawing.Point(22, 603);
+            this.buttonAddBook.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddBook.Name = "buttonAddBook";
-            this.buttonAddBook.Size = new System.Drawing.Size(163, 54);
+            this.buttonAddBook.Size = new System.Drawing.Size(95, 27);
             this.buttonAddBook.TabIndex = 6;
             this.buttonAddBook.Text = "Lägg till bok";
-            this.buttonAddBook.UseVisualStyleBackColor = true;
+            this.buttonAddBook.UseVisualStyleBackColor = false;
             this.buttonAddBook.Click += new System.EventHandler(this.buttonAddBook_Click);
             // 
             // buttonAddBooking
             // 
-            this.buttonAddBooking.Location = new System.Drawing.Point(1646, 634);
-            this.buttonAddBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonAddBooking.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonAddBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddBooking.Location = new System.Drawing.Point(879, 336);
+            this.buttonAddBooking.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddBooking.Name = "buttonAddBooking";
-            this.buttonAddBooking.Size = new System.Drawing.Size(163, 54);
+            this.buttonAddBooking.Size = new System.Drawing.Size(95, 27);
             this.buttonAddBooking.TabIndex = 8;
             this.buttonAddBooking.Text = "OK";
-            this.buttonAddBooking.UseVisualStyleBackColor = true;
+            this.buttonAddBooking.UseVisualStyleBackColor = false;
             this.buttonAddBooking.Click += new System.EventHandler(this.buttonAddBooking_Click);
             // 
             // dataGridViewBooked
             // 
             this.dataGridViewBooked.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewBooked.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBooked.Location = new System.Drawing.Point(1141, 374);
-            this.dataGridViewBooked.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewBooked.Location = new System.Drawing.Point(584, 191);
+            this.dataGridViewBooked.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewBooked.Name = "dataGridViewBooked";
             this.dataGridViewBooked.RowHeadersWidth = 72;
             this.dataGridViewBooked.RowTemplate.Height = 37;
-            this.dataGridViewBooked.Size = new System.Drawing.Size(668, 237);
+            this.dataGridViewBooked.Size = new System.Drawing.Size(390, 118);
             this.dataGridViewBooked.TabIndex = 9;
             // 
             // textBoxLoaner
             // 
             this.textBoxLoaner.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBoxLoaner.Location = new System.Drawing.Point(1141, 225);
-            this.textBoxLoaner.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.textBoxLoaner.Location = new System.Drawing.Point(583, 110);
             this.textBoxLoaner.Multiline = true;
             this.textBoxLoaner.Name = "textBoxLoaner";
             this.textBoxLoaner.ReadOnly = true;
-            this.textBoxLoaner.Size = new System.Drawing.Size(668, 74);
+            this.textBoxLoaner.Size = new System.Drawing.Size(391, 39);
             this.textBoxLoaner.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1141, 189);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(583, 82);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 30);
+            this.label3.Size = new System.Drawing.Size(82, 21);
             this.label3.TabIndex = 11;
             this.label3.Text = "Låntagare";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(1439, 646);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(742, 343);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(186, 30);
+            this.label4.Size = new System.Drawing.Size(133, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Skapa ny bokning?";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1141, 331);
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(584, 164);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 30);
+            this.label5.Size = new System.Drawing.Size(67, 21);
             this.label5.TabIndex = 14;
             this.label5.Text = "Boklista";
             // 
@@ -189,28 +204,31 @@ namespace LibraryUI
             // 
             this.labelLåntagareFail.AutoSize = true;
             this.labelLåntagareFail.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelLåntagareFail.Location = new System.Drawing.Point(1463, 305);
+            this.labelLåntagareFail.Location = new System.Drawing.Point(830, 152);
+            this.labelLåntagareFail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLåntagareFail.Name = "labelLåntagareFail";
-            this.labelLåntagareFail.Size = new System.Drawing.Size(57, 30);
+            this.labelLåntagareFail.Size = new System.Drawing.Size(32, 15);
             this.labelLåntagareFail.TabIndex = 15;
             this.labelLåntagareFail.Text = "label";
             // 
-            // button1
+            // labelFailBok
             // 
-            this.button1.Location = new System.Drawing.Point(351, 1221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 40);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.labelFailBok.AutoSize = true;
+            this.labelFailBok.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelFailBok.Location = new System.Drawing.Point(830, 313);
+            this.labelFailBok.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelFailBok.Name = "labelFailBok";
+            this.labelFailBok.Size = new System.Drawing.Size(32, 15);
+            this.labelFailBok.TabIndex = 16;
+            this.labelFailBok.Text = "label";
+            this.labelFailBok.Click += new System.EventHandler(this.label6_Click);
             // 
             // BookingApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1925, 1396);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1000, 700);
+            this.Controls.Add(this.labelFailBok);
             this.Controls.Add(this.labelLåntagareFail);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -226,7 +244,7 @@ namespace LibraryUI
             this.Controls.Add(this.dataGridViewMember);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "BookingApplication";
             this.Text = "BokningsApplication";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).EndInit();
@@ -253,6 +271,6 @@ namespace LibraryUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelLåntagareFail;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label labelFailBok;
     }
 }

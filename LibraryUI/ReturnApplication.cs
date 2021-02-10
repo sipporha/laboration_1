@@ -30,23 +30,23 @@ namespace LibraryUI
             dataGridViewBooking.Columns["Faktura"].Visible = false;
             dataGridViewBooking.Columns["Återlämnad"].Visible = false;
             dataGridViewBooking.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewBooking.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewBooking.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridViewBooking.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewBooking.MultiSelect = false;
             dataGridViewBooking.AllowUserToResizeRows = false;
             dataGridViewBooking.AllowUserToAddRows = false;
 
 
-            dataGridView1.DataSource = main.HämtaFaktura();
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Columns[0].Visible = false;
-            dataGridView1.MultiSelect = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AllowUserToAddRows = false;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            dataGridViewInvoices.DataSource = main.HämtaFaktura();
+            dataGridViewInvoices.RowHeadersVisible = false;
+            dataGridViewInvoices.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewInvoices.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewInvoices.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewInvoices.Columns[0].Visible = false;
+            dataGridViewInvoices.MultiSelect = false;
+            dataGridViewInvoices.AllowUserToResizeRows = false;
+            dataGridViewInvoices.AllowUserToAddRows = false;
+            foreach (DataGridViewRow row in dataGridViewInvoices.Rows)
             {
                 if((double)row.Cells[5].Value == 0)
                 {
@@ -61,15 +61,20 @@ namespace LibraryUI
             LaddaInnehåll();
         }
 
-
+        /// <summary>
+        /// Letar upp bokningar och tar bort den bokning en användaren markerar och väljer att ta bort.
+        /// Bokens status ändras till tillgänglig och går att på nytt bokas.
+        /// Om bokningen återlämnas för sent skapas en faktura som adderar 10:-/dag som går över slutdatumet för bokningen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonCancelBooking_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewBooking.CurrentRow;
-
             foreach (var item in main.HämtaBokning())
             {
-                if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
 
+                if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
                 {
                     item.Återlämnad = true;
                     item.Bok.Tillgänglig = true;
@@ -78,11 +83,9 @@ namespace LibraryUI
                         double x = Math.Floor((DateTime.Now.Date-item.Sluttid).TotalDays * 10);
                         if (x>0)
                         {
-                            MessageBox.Show("Du får betala " + x + "kr.");
+                            MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!");
                             main.SkapaFaktura(item, x);
                         }
-                        
-                  
                     }
                 }
             }
@@ -90,23 +93,25 @@ namespace LibraryUI
             LaddaInnehåll();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            dataGridViewBooking.DataSource = typeof(List<Bokning>);
-            LaddaInnehåll();
-        }
-
+        /// <summary>
+        /// Om en faktura är obetald, kan användaren välja att markera fakturan som betald och fakturans återstående
+        /// summa ställs till 0.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonPayInvoice_Click(object sender, EventArgs e)
         {
-            DataGridViewRow valdFaktura = dataGridView1.SelectedRows[0];
+            DataGridViewRow valdFaktura = dataGridViewInvoices.SelectedRows[0];
             Faktura f = (Faktura)valdFaktura.DataBoundItem;
-            f.ÅterståendeSumma = 0;
-            LaddaInnehåll();
-            
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
+            if (f.ÅterståendeSumma == 0)
+            {
+                MessageBox.Show("Fakturan är redan betald!", "Notis");
+            }
+            else
+            {
+                f.ÅterståendeSumma = 0;
+                MessageBox.Show("Betalningen lyckades!", "Notis");
+            }
             LaddaInnehåll();
         }
     }

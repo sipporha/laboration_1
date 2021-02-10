@@ -54,11 +54,13 @@ namespace LibraryUI
             dataGridViewBooked.MultiSelect = false;
             dataGridViewBooked.AllowUserToResizeRows = false;
             dataGridViewBooked.AllowUserToAddRows = false;
+
+            labelLåntagareFail.Text = "";
+            labelFailBok.Text = "";
         }
 
         public void UppdateraInnehåll()
         {
-           
             List<Bok> TillgänligaBöcker = new List<Bok>();
             foreach (var item in main.HämtaBok())
             {
@@ -67,9 +69,10 @@ namespace LibraryUI
                     TillgänligaBöcker.Add(item);
                 }
             }
-           
             dataGridViewBook.DataSource = TillgänligaBöcker;
             textBoxLoaner.Text = "";
+            labelFailBok.Text = "";
+            labelLåntagareFail.Text = "";
         }
 
         private void buttonAddMember_Click(object sender, EventArgs e)
@@ -104,12 +107,23 @@ namespace LibraryUI
             dataGridViewBooked.Columns["Titel"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-
+        /// <summary>
+        /// Metoden skapar en ny bokning med en kund och ett antal böcker.
+        /// Böckerna status ändras till otillgängliga ända tills dess att de returneras.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonAddBooking_Click(object sender, EventArgs e)
         {
             if (m==null)
             {
                 labelLåntagareFail.Text="Du måste välja användare!";   
+                return;
+            }
+            
+            if (bokadeBöcker.Count == 0)
+            {
+                labelFailBok.Text = "Du måste välja en bok!";
                 return;
             }
 
@@ -118,7 +132,9 @@ namespace LibraryUI
                 main.LäggTillBokning(item, m);
                 item.Tillgänglig = false;
             }
-            labelLåntagareFail.Text= "";
+
+            labelLåntagareFail.Text="";
+            labelFailBok.Text = "";
             MessageBox.Show("Bokning är sparad!","Meddelande");
             dataGridViewBooked.Rows.Clear();  
             m = null;
@@ -126,9 +142,9 @@ namespace LibraryUI
             textBoxLoaner.Text = "";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void label6_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

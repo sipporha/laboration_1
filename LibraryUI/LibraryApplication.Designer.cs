@@ -43,8 +43,8 @@ namespace LibraryUI
             this.toolStripMenuReturn});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(2230, 45);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip.Size = new System.Drawing.Size(1004, 26);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -52,7 +52,7 @@ namespace LibraryUI
             // 
             this.toolStripMenuBooking.Font = new System.Drawing.Font("Segoe UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolStripMenuBooking.Name = "toolStripMenuBooking";
-            this.toolStripMenuBooking.Size = new System.Drawing.Size(132, 41);
+            this.toolStripMenuBooking.Size = new System.Drawing.Size(75, 24);
             this.toolStripMenuBooking.Text = "Bokning";
             this.toolStripMenuBooking.Click += new System.EventHandler(this.toolStripMenuBooking_Click);
             // 
@@ -60,19 +60,19 @@ namespace LibraryUI
             // 
             this.toolStripMenuReturn.Font = new System.Drawing.Font("Segoe UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.toolStripMenuReturn.Name = "toolStripMenuReturn";
-            this.toolStripMenuReturn.Size = new System.Drawing.Size(196, 41);
+            this.toolStripMenuReturn.Size = new System.Drawing.Size(111, 24);
             this.toolStripMenuReturn.Text = "Återlämnning";
             this.toolStripMenuReturn.Click += new System.EventHandler(this.toolStripMenuReturn_Click);
             // 
             // LibraryApplication
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2230, 1547);
+            this.ClientSize = new System.Drawing.Size(1004, 730);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LibraryApplication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LibraryApplication";

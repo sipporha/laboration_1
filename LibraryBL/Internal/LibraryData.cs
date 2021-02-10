@@ -25,6 +25,9 @@ namespace LibraryBL.Internal
             LaddaData();
         }
 
+        /// <summary>
+        /// LaddaData(), laddar in all data i programmet.
+        /// </summary>
         public void LaddaData()
         {
             personalRepository.Tabell.Add(new Personal(1, "zlatte", "Zlatan", "Ibrahimovic", "073-123456", "zlatan@ibrahimovic.se"));
@@ -49,6 +52,10 @@ namespace LibraryBL.Internal
             medlemRepository.Tabell.Add(new Medlem(6, "Mona", "Monasson", "073-303030", "mona@test.mail.se"));
             medlemRepository.Tabell.Add(new Medlem(7, "Ulla", "Ullasson", "074-404040", "ulla@test.mail.se"));
 
+            // Dessa två bokningar är hårdkodade endast för att illustrera att en faktura skapas 
+            //och räknar ut ett totalpris eftersom de är föresnade.
+            // De har dessutom hårdkodade bokningsnummer, vilket gör att när man skapar en ny bokning i körtiden, 
+            //finns tillfälligt dubletter av bokningsnumrena 1 & 2.
             bokningsRepository.Tabell.Add(new Bokning(1, bokRepository.Tabell[0], medlemRepository.Tabell[1], DateTime.Now, new DateTime(2021,02,05)));
             bokningsRepository.Tabell.Add(new Bokning(2, bokRepository.Tabell[1], medlemRepository.Tabell[2], DateTime.Now, new DateTime(1982,05,07)));
 
