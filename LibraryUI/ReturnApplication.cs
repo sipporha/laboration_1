@@ -57,7 +57,6 @@ namespace LibraryUI
         }
         public void UppdateraInnehåll()
         {
-
             dataGridViewBooking.DataSource = typeof(List<Bokning>);
             LaddaInnehåll();
         }

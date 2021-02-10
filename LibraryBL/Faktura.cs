@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibraryBL
 {
-    public class Faktura // Lite osäker på om vi verkligen behöver alla dessa properties i denna klassen...??
+    public class Faktura
     {
         public Bokning Bokning { get; private set; }
         public int Bokningsnummer { get { return Bokning.Bokningsnummer; } }
