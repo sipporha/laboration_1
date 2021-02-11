@@ -20,7 +20,22 @@ namespace LibraryBL
         public bool Återlämnad { get; set; }
         public Faktura Faktura { get; set; }
 
-        
+        public Medlem medlem
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Bok bok
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         public Bokning(int bokningsnummer,Bok bok, Medlem medlem, DateTime starttid, DateTime sluttid)
         {
             Bokningsnummer = bokningsnummer;

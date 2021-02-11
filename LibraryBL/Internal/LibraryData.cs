@@ -20,7 +20,7 @@ namespace LibraryBL.Internal
             bokRepository = new Repository<Bok>();
             medlemRepository = new Repository<Medlem>();
             personalRepository = new Repository<Personal>();
-            fakturaRepository = new Repository<Faktura>(); 
+            fakturaRepository = new Repository<Faktura>();
             bokningsRepository = new Repository<Bokning>();
             LaddaData();
         }
@@ -55,8 +55,8 @@ namespace LibraryBL.Internal
             // Dessa två bokningar är hårdkodade endast för att illustrera att en faktura skapas 
             //och räknar ut ett totalpris eftersom de är försenade.
             // De har dessutom hårdkodade bokningsnummer, vilket annars räknas upp av programmet när en ny bokning skapas.
-            bokningsRepository.Tabell.Add(new Bokning(45, bokRepository.Tabell[0], medlemRepository.Tabell[1], DateTime.Now, new DateTime(2021,02,05)));
-            bokningsRepository.Tabell.Add(new Bokning(2325, bokRepository.Tabell[1], medlemRepository.Tabell[2], DateTime.Now, new DateTime(1982,05,07)));
+            bokningsRepository.Tabell.Add(new Bokning(45, bokRepository.Tabell[0], medlemRepository.Tabell[1], DateTime.Now, new DateTime(2021, 02, 05)));
+            bokningsRepository.Tabell.Add(new Bokning(2325, bokRepository.Tabell[1], medlemRepository.Tabell[2], DateTime.Now, new DateTime(1982, 05, 07)));
 
             bokRepository.Tabell[0].Tillgänglig = false;
             bokRepository.Tabell[1].Tillgänglig = false;

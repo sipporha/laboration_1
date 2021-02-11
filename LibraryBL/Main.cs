@@ -116,6 +116,22 @@ namespace LibraryBL
             }
             return Fakturor;
         }
+
+        internal LibraryData LibraryData
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Personal Personal
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 
 }

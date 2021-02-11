@@ -15,6 +15,14 @@ namespace LibraryBL
         public double Totalpris { get; private set; }
         public double ÅterståendeSumma { get; set; }
 
+        public Bokning bokning
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         internal Faktura(Bokning bokning, double totalpris)
         {
             Bokning = bokning;
