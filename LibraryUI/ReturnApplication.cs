@@ -87,9 +87,9 @@ namespace LibraryUI
                             main.SkapaFaktura(item, x);
                         }
                     }
+                    MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
-            MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } 
             dataGridViewBooking.DataSource = typeof(List<Bokning>);
             LaddaInnehåll();
         }

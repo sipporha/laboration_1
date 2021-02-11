@@ -26,7 +26,7 @@ namespace LibraryBL.Internal
         }
 
         /// <summary>
-        /// LaddaData(), laddar in all data i programmet.
+        /// Laddar in all data i programmet.
         /// </summary>
         public void LaddaData()
         {
@@ -40,7 +40,7 @@ namespace LibraryBL.Internal
             bokRepository.Tabell.Add(new Bok(50005, "En guide till att överleva på prinskorv"));
             bokRepository.Tabell.Add(new Bok(60006, "Lägg ditt bakomflutna före dig"));
             bokRepository.Tabell.Add(new Bok(70007, "Bädda sängen i en sovsäck"));
-            bokRepository.Tabell.Add(new Bok(80008, "SkolAtlas 2000"));
+            bokRepository.Tabell.Add(new Bok(80008, "Skol Atlas 2000"));
             bokRepository.Tabell.Add(new Bok(90009, "Vilse i min egen trädgård"));
             bokRepository.Tabell.Add(new Bok(100010, "Lär dig programmera på bara 30år"));
 
@@ -53,11 +53,10 @@ namespace LibraryBL.Internal
             medlemRepository.Tabell.Add(new Medlem(7, "Ulla", "Ullasson", "074-404040", "ulla@test.mail.se"));
 
             // Dessa två bokningar är hårdkodade endast för att illustrera att en faktura skapas 
-            //och räknar ut ett totalpris eftersom de är föresnade.
-            // De har dessutom hårdkodade bokningsnummer, vilket gör att när man skapar en ny bokning i körtiden, 
-            //finns tillfälligt dubletter av bokningsnumrena 1 & 2.
-            bokningsRepository.Tabell.Add(new Bokning(1, bokRepository.Tabell[0], medlemRepository.Tabell[1], DateTime.Now, new DateTime(2021,02,05)));
-            bokningsRepository.Tabell.Add(new Bokning(2, bokRepository.Tabell[1], medlemRepository.Tabell[2], DateTime.Now, new DateTime(1982,05,07)));
+            //och räknar ut ett totalpris eftersom de är försenade.
+            // De har dessutom hårdkodade bokningsnummer, vilket annars räknas upp av programmet när en ny bokning skapas.
+            bokningsRepository.Tabell.Add(new Bokning(45, bokRepository.Tabell[0], medlemRepository.Tabell[1], DateTime.Now, new DateTime(2021,02,05)));
+            bokningsRepository.Tabell.Add(new Bokning(2325, bokRepository.Tabell[1], medlemRepository.Tabell[2], DateTime.Now, new DateTime(1982,05,07)));
 
             bokRepository.Tabell[0].Tillgänglig = false;
             bokRepository.Tabell[1].Tillgänglig = false;
