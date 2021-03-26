@@ -62,9 +62,9 @@ namespace LibraryUI
         }
 
         /// <summary>
-        /// Letar upp bokningar och tar bort den bokning en användaren markerar och väljer att ta bort.
-        /// Bokens status ändras till tillgänglig och går att på nytt bokas.
-        /// Om bokningen återlämnas för sent skapas en faktura som adderar 10:-/dag som går över slutdatumet för bokningen.
+        /// Letar upp alla tillgängliga bokningar för att sedan skicka vidare en referens 
+        /// till den valda bokningen en användare vill avsluta.
+        /// Denna referens skickas med metoden "AvslutaBokning" som tar bort den i affärslagret.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
