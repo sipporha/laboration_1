@@ -97,17 +97,11 @@ namespace LibraryBL
             // Här skickas in en referens och ett index till en vald bokning från UI:t som oavsett får status Återlämnad samt tillgänglig.
             // Vid de fall en bok är försenad genomförs en matematisk uträkning på totalbelopp, samt att en faktura skapas.
             // Om en bok lämnas tillbaka i tid, skapas dock ingen faktura eftersom det är meningslöst att skapa fakturor med ett belopp på 0:-
-
             item.Återlämnad = true;
             item.Bok.Tillgänglig = true;
             if (DateTime.Now > item.Sluttid)
             {
-                double x = Math.Floor((DateTime.Now.Date - item.Sluttid).TotalDays * 10);
-                if (x > 0)
-                {
-                    SkapaFaktura(item, x);
-                    MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
+                SkapaFaktura(item);
             }
             MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return item;
@@ -135,9 +129,10 @@ namespace LibraryBL
         /// </summary>
         /// <param name="bokning"></param>
         /// <param name="totalpris"></param>
-
-        public void SkapaFaktura(Bokning bokning, double totalpris)
+        public void SkapaFaktura(Bokning bokning)
         {
+            double totalpris = Math.Floor((DateTime.Now.Date - bokning.Sluttid).TotalDays * 10);
+            MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             Faktura faktura = new Faktura(bokning, totalpris);
             bokning.Faktura = faktura;
         }

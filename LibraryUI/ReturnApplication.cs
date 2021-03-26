@@ -71,6 +71,8 @@ namespace LibraryUI
         private void buttonCancelBooking_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewBooking.CurrentRow;
+            main.AvslutaBokning((Bokning)selectedRow.DataBoundItem);
+      /*
             foreach (var item in main.HämtaBokningar())
             {
                 if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
@@ -78,27 +80,10 @@ namespace LibraryUI
                     main.AvslutaBokning(item);
                 }
             }
-
-            /*
-            foreach (var item in main.HämtaBokningar())
-            {
-                if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
-                {
-                    item.Återlämnad = true;
-                    item.Bok.Tillgänglig = true;
-                    if (DateTime.Now>item.Sluttid)
-                    {
-                        double x = Math.Floor((DateTime.Now.Date-item.Sluttid).TotalDays * 10);
-                        if (x>0)
-                        {
-                            MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            main.SkapaFaktura(item, x);
-                        }
-                    }
-                    MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            } 
-            */
+      */
+            
+           
+            
             dataGridViewBooking.DataSource = typeof(List<Bokning>);
             LaddaInnehåll();
         }
