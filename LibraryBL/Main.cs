@@ -105,7 +105,7 @@ namespace LibraryBL
                 double x = Math.Floor((DateTime.Now.Date - item.Sluttid).TotalDays * 10);
                 if (x > 0)
                 {
-                    main.SkapaFaktura(item, x);
+                    SkapaFaktura(item, x);
                     MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
@@ -117,7 +117,7 @@ namespace LibraryBL
         /// Metoder skapar en lista och lägger bokade böcker i den innan den returnerar den.
         /// </summary>
         /// <returns></returns>
-        public List<Bokning> HämtaBokningar()
+        public List<Bokning> HämtaBokningar() // Bytt från singular till plural
         {
             List<Bokning> notReturned = new List<Bokning>();
             foreach (var item in libraryData.bokningsRepository.Tabell)
