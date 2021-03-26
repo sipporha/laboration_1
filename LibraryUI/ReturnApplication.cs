@@ -73,7 +73,15 @@ namespace LibraryUI
             DataGridViewRow selectedRow = dataGridViewBooking.CurrentRow;
             foreach (var item in main.HämtaBokningar())
             {
+                if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
+                {
+                    main.AvslutaBokning(item);
+                }
+            }
 
+            /*
+            foreach (var item in main.HämtaBokningar())
+            {
                 if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
                 {
                     item.Återlämnad = true;
@@ -90,6 +98,7 @@ namespace LibraryUI
                     MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             } 
+            */
             dataGridViewBooking.DataSource = typeof(List<Bokning>);
             LaddaInnehåll();
         }
@@ -106,12 +115,12 @@ namespace LibraryUI
             Faktura f = (Faktura)valdFaktura.DataBoundItem;
             if (f.ÅterståendeSumma == 0)
             {
-                MessageBox.Show("Fakturan är redan betald!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Fakturan är redan betald!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 f.ÅterståendeSumma = 0;
-                MessageBox.Show("Betalningen lyckades!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("Betalningen lyckades!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             LaddaInnehåll();
         }

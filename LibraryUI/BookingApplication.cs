@@ -61,15 +61,24 @@ namespace LibraryUI
 
         public void UppdateraInnehåll()
         {
-            List<Bok> TillgänligaBöcker = new List<Bok>();
+            // Detta bör flyttas upp i affärslagret istället för att göras här i UI:t 
+
+            //List<Bok> TillgänligaBöcker = new List<Bok>();
+            //main.HämtaBöcker();
+            /*
             foreach (var item in main.HämtaBöcker())
             {
-                if (item.Tillgänglig) // Detta bör flyttas upp i affärslagret istället för att göras här i UI:t 
+                if (item.Tillgänglig) 
                 {
                     TillgänligaBöcker.Add(item);
                 }
             }
-            dataGridViewBook.DataSource = TillgänligaBöcker;
+            */
+
+         // Lösningen = Jag kallar på en metod i Main (affärslagret) som i det skede kör en foreach samt en if-sats som returnerar tillgängliga böcker.
+         // Gå till main.Hämtacöker för vidare förklaring.
+
+            dataGridViewBook.DataSource = main.HämtaBöcker();
             textBoxLoaner.Text = "";
             labelFailBok.Text = "";
             labelLåntagareFail.Text = "";

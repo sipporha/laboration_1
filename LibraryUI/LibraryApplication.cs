@@ -44,7 +44,7 @@ namespace LibraryUI
 
         private void LibraryApplication_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MessageBox.Show("Programmet Avslutas!","Varning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //MessageBox.Show("Programmet Avslutas!","Varning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             Application.Exit();
         } 
     }
