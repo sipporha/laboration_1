@@ -54,12 +54,12 @@ namespace LibraryBL
             return false;
         }
        
-        public IList<Medlem> HämtaMedlem()
+        public IList<Medlem> HämtaMedlemmar()
         {
             return libraryData.medlemRepository.Tabell;
         }
 
-        public List<Bok> HämtaBok()
+        public List<Bok> HämtaBöcker()
         {
             return (List<Bok>)libraryData.bokRepository.Tabell;
         }
@@ -68,7 +68,7 @@ namespace LibraryBL
         /// Metoder skapar en lista och lägger bokade böcker i den innan den returnerar den.
         /// </summary>
         /// <returns></returns>
-        public List<Bokning> HämtaBokning()
+        public List<Bokning> HämtaBokningar()
         {
             List<Bokning> notReturned = new List<Bokning>();
             foreach (var item in libraryData.bokningsRepository.Tabell )

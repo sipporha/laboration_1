@@ -23,7 +23,7 @@ namespace LibraryUI
 
         public void LaddaInnehåll()
         {
-            dataGridViewBooking.DataSource = main.HämtaBokning();
+            dataGridViewBooking.DataSource = main.HämtaBokningar();
             dataGridViewBooking.RowHeadersVisible = false;
             dataGridViewBooking.Columns["Bok"].Visible = false;
             dataGridViewBooking.Columns["Medlem"].Visible = false;
@@ -71,7 +71,7 @@ namespace LibraryUI
         private void buttonCancelBooking_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewBooking.CurrentRow;
-            foreach (var item in main.HämtaBokning())
+            foreach (var item in main.HämtaBokningar())
             {
 
                 if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))

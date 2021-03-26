@@ -26,7 +26,7 @@ namespace LibraryUI
         }
         public void LaddaInnehåll()
         {
-            dataGridViewBook.DataSource = main.HämtaBok();
+            dataGridViewBook.DataSource = main.HämtaBöcker();
             dataGridViewBook.RowHeadersVisible = false;
             dataGridViewBook.Columns["Tillgänglig"].Visible = false;
             dataGridViewBook.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -36,7 +36,7 @@ namespace LibraryUI
             dataGridViewBook.AllowUserToResizeRows = false;
             dataGridViewBook.AllowUserToAddRows = false;
 
-            dataGridViewMember.DataSource = main.HämtaMedlem();
+            dataGridViewMember.DataSource = main.HämtaMedlemmar();
             dataGridViewMember.Columns["Medlemsnummer"].Visible = false;
             dataGridViewMember.Columns["FullNamn"].Visible = false;
             dataGridViewMember.RowHeadersVisible = false;
@@ -62,9 +62,9 @@ namespace LibraryUI
         public void UppdateraInnehåll()
         {
             List<Bok> TillgänligaBöcker = new List<Bok>();
-            foreach (var item in main.HämtaBok())
+            foreach (var item in main.HämtaBöcker())
             {
-                if (item.Tillgänglig)
+                if (item.Tillgänglig) // Detta bör flyttas upp i affärslagret istället för att göras här i UI:t 
                 {
                     TillgänligaBöcker.Add(item);
                 }
