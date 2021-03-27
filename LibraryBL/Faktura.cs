@@ -15,6 +15,8 @@ namespace LibraryBL
         public double Totalpris { get; private set; }
         public double ÅterståendeSumma { get; set; }
 
+        // Är utkommenterat eftersom de endast är självgenererad kod för att classdiagram av någon anledning behövt det.
+        /*
         public Bokning bokning
         {
             get => default;
@@ -22,6 +24,7 @@ namespace LibraryBL
             {
             }
         }
+        */
 
         internal Faktura(Bokning bokning, double totalpris)
         {

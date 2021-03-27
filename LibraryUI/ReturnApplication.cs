@@ -36,6 +36,8 @@ namespace LibraryUI
             dataGridViewBooking.AllowUserToResizeRows = false;
             dataGridViewBooking.AllowUserToAddRows = false;
 
+            
+
 
             dataGridViewInvoices.DataSource = main.HämtaFaktura();
             dataGridViewInvoices.RowHeadersVisible = false;
@@ -71,8 +73,19 @@ namespace LibraryUI
         private void buttonCancelBooking_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dataGridViewBooking.CurrentRow;
-            main.AvslutaBokning((Bokning)selectedRow.DataBoundItem);
-      /*
+            //main.AvslutaBokning((Bokning)selectedRow.DataBoundItem);
+
+            if (selectedRow==null)
+            {
+                MessageBox.Show("Det finns inga bokningar", "Varning!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                main.AvslutaBokning((Bokning)selectedRow.DataBoundItem);
+            }
+
+            // OBS!! Utkommenterad kod är gammal och har blivit ersatt med en ny lösning.
+            /*
             foreach (var item in main.HämtaBokningar())
             {
                 if (item.Bok.ISBN == Convert.ToInt32(selectedRow.Cells["ISBN"].Value.ToString()))
@@ -80,10 +93,8 @@ namespace LibraryUI
                     main.AvslutaBokning(item);
                 }
             }
-      */
-            
-           
-            
+            */
+
             dataGridViewBooking.DataSource = typeof(List<Bokning>);
             LaddaInnehåll();
         }
@@ -100,12 +111,12 @@ namespace LibraryUI
             Faktura f = (Faktura)valdFaktura.DataBoundItem;
             if (f.ÅterståendeSumma == 0)
             {
-                //MessageBox.Show("Fakturan är redan betald!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Fakturan är redan betald!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 f.ÅterståendeSumma = 0;
-                //MessageBox.Show("Betalningen lyckades!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Betalningen lyckades!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             LaddaInnehåll();
         }

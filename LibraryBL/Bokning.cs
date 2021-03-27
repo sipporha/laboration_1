@@ -20,6 +20,8 @@ namespace LibraryBL
         public bool Återlämnad { get; set; }
         public Faktura Faktura { get; set; }
 
+        // Är utkommenterat eftersom de endast är självgenererad kod för att classdiagram av någon anledning behövt det.
+        /*
         public Medlem medlem
         {
             get => default;
@@ -35,6 +37,7 @@ namespace LibraryBL
             {
             }
         }
+        */
 
         public Bokning(int bokningsnummer,Bok bok, Medlem medlem, DateTime starttid, DateTime sluttid)
         {

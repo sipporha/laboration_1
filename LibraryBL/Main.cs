@@ -97,11 +97,12 @@ namespace LibraryBL
             // Här skickas in en referens och ett index till en vald bokning från UI:t som oavsett får status Återlämnad samt tillgänglig.
             // Vid de fall en bok är försenad genomförs en matematisk uträkning på totalbelopp, samt att en faktura skapas.
             // Om en bok lämnas tillbaka i tid, skapas dock ingen faktura eftersom det är meningslöst att skapa fakturor med ett belopp på 0:-
+           
             item.Återlämnad = true;
             item.Bok.Tillgänglig = true;
             if (DateTime.Now > item.Sluttid)
             {
-                SkapaFaktura(item);
+               SkapaFaktura(item);
             }
             MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return item;
@@ -150,6 +151,8 @@ namespace LibraryBL
             return Fakturor;
         }
 
+        // Är utkommenterat eftersom de endast är självgenererad kod för att classdiagram av någon anledning behövt det.
+        /*
         internal LibraryData LibraryData
         {
             get => default;
@@ -165,5 +168,6 @@ namespace LibraryBL
             {
             }
         }
+        */
     }
 }
