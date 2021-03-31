@@ -88,6 +88,25 @@ namespace LibraryBL
         }
 
         /// <summary>
+        /// Tar bort en boknig vid de fall en bokning blivit fel eller att man ångrat sig.
+        /// </summary>
+        public Bokning TaBortBokning(Bokning valdBokning)
+        {
+           
+            if (DateTime.Now > valdBokning.Sluttid)
+            {
+                MessageBox.Show("Du får inte ta bort en bokning som är försenad!", "Varning!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                valdBokning.Återlämnad = true;
+                valdBokning.Bok.Tillgänglig = true;
+                MessageBox.Show("Bokningen har blivit borrtagen!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return valdBokning;
+        }
+
+        /// <summary>
         /// Denna metod tar emot ett index från användare och avslutar vald bokning. Beronde på om den blivit försenad eller inte så kommer det skapas en faktura.
         /// </summary>
         /// <param name="item"></param>

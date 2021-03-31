@@ -63,6 +63,8 @@ namespace LibraryUI
             LaddaInnehåll();
         }
 
+       
+
         /// <summary>
         /// Letar upp alla tillgängliga bokningar för att sedan skicka vidare en referens 
         /// till den valda bokningen en användare vill avsluta.
@@ -117,6 +119,20 @@ namespace LibraryUI
             {
                 f.ÅterståendeSumma = 0;
                 MessageBox.Show("Betalningen lyckades!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            LaddaInnehåll();
+        }
+
+        private void buttonDeleteBooking_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridViewBooking.CurrentRow;
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Det finns inga bokningar", "Varning!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                main.TaBortBokning((Bokning)selectedRow.DataBoundItem);
             }
             LaddaInnehåll();
         }
