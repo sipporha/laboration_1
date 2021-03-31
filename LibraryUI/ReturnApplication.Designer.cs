@@ -39,7 +39,6 @@ namespace LibraryUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonDeleteBooking = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoices)).BeginInit();
             this.SuspendLayout();
@@ -80,12 +79,12 @@ namespace LibraryUI
             // 
             this.buttonCancelBooking.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.buttonCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelBooking.Location = new System.Drawing.Point(1154, 598);
+            this.buttonCancelBooking.Location = new System.Drawing.Point(946, 598);
             this.buttonCancelBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancelBooking.Name = "buttonCancelBooking";
             this.buttonCancelBooking.Size = new System.Drawing.Size(189, 60);
             this.buttonCancelBooking.TabIndex = 9;
-            this.buttonCancelBooking.Text = "Återlämna";
+            this.buttonCancelBooking.Text = "Avsluta bokning";
             this.buttonCancelBooking.UseVisualStyleBackColor = false;
             this.buttonCancelBooking.Click += new System.EventHandler(this.buttonCancelBooking_Click);
             // 
@@ -93,11 +92,11 @@ namespace LibraryUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(732, 606);
+            this.label3.Location = new System.Drawing.Point(713, 608);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(412, 37);
+            this.label3.Size = new System.Drawing.Size(216, 37);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Är boken/böckerna återlämnade?";
+            this.label3.Text = "Hantera bokning";
             // 
             // dataGridViewInvoices
             // 
@@ -148,7 +147,7 @@ namespace LibraryUI
             // 
             this.buttonDeleteBooking.BackColor = System.Drawing.Color.LightCoral;
             this.buttonDeleteBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteBooking.Location = new System.Drawing.Point(1154, 692);
+            this.buttonDeleteBooking.Location = new System.Drawing.Point(1154, 598);
             this.buttonDeleteBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDeleteBooking.Name = "buttonDeleteBooking";
             this.buttonDeleteBooking.Size = new System.Drawing.Size(189, 60);
@@ -157,22 +156,11 @@ namespace LibraryUI
             this.buttonDeleteBooking.UseVisualStyleBackColor = false;
             this.buttonDeleteBooking.Click += new System.EventHandler(this.buttonDeleteBooking_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(860, 702);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(284, 37);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Är bokningen felaktig?";
-            // 
             // ReturnApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1714, 1400);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.buttonDeleteBooking);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -206,6 +194,5 @@ namespace LibraryUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonDeleteBooking;
-        private System.Windows.Forms.Label label6;
     }
 }
