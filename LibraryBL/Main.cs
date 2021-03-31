@@ -48,8 +48,9 @@ namespace LibraryBL
             {
                 if (x.Id == Convert.ToInt32(användarnamn) && x.Lösenord == lösenord)
                 {
+                    MessageBox.Show($"Välkommen {x.Förnamn} {x.Efternamn}!", "Inloggningen lyckades!");
                     return true;
-                }
+                }   
             }
             return false;
         }
