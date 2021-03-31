@@ -94,7 +94,8 @@ namespace LibraryBL
         /// <returns></returns>
         public Bokning AvslutaBokning(Bokning item)
         {
-            // Här skickas in en referens och ett index till en vald bokning från UI:t som oavsett får status Återlämnad samt tillgänglig.
+            // Här skickas in en referens och ett index till en vald bokning från UI:t som oavsett får status Återlämnad.
+            // En bok får status tillgänglig också.
             // Vid de fall en bok är försenad genomförs en matematisk uträkning på totalbelopp, samt att en faktura skapas.
             // Om en bok lämnas tillbaka i tid, skapas dock ingen faktura eftersom det är meningslöst att skapa fakturor med ett belopp på 0:-
            
