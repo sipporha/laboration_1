@@ -15,6 +15,8 @@ namespace LibraryBL
         public string Epost { get; private set; }
         public string Lösenord { get; private set; }
 
+        // Utkommenterad kod för ClassDiagram.cd
+        /*
         public Bokning Bokar
         {
             get => default;
@@ -22,6 +24,7 @@ namespace LibraryBL
             {
             }
         }
+        */
 
         // public string Roll { get; private set; } Skapad och förberedd för chefsapplikation
 

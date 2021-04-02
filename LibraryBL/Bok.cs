@@ -19,6 +19,5 @@ namespace LibraryBL
             Tillgänglig = true;
         }
 
-
     }
 }

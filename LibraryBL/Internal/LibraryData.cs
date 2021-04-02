@@ -60,6 +60,9 @@ namespace LibraryBL.Internal
 
             bokRepository.Tabell[0].Tillgänglig = false;
             bokRepository.Tabell[1].Tillgänglig = false;
+
+            bokningsRepository.Tabell[0].Utlämnad = true;
+            bokningsRepository.Tabell[1].Utlämnad = true;
         }
 
 

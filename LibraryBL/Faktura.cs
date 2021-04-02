@@ -24,7 +24,8 @@ namespace LibraryBL
             ÅterståendeSumma = totalpris;
         }
 
-        // Kod för klassdiagram
+        // Utkommenterad kod för ClassDiagram.cd
+        /*
         public Bokning bokning
         {
             get => default;
@@ -32,5 +33,6 @@ namespace LibraryBL
             {
             }
         }
+        */
     }
 }

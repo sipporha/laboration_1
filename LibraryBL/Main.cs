@@ -201,7 +201,9 @@ namespace LibraryBL
             return Fakturor;
         }
 
-      //Kod för klassdiagrammet
+        
+        // Utkommenterad kod för ClassDiagram.cd
+        /*
         internal LibraryData LibraryData
         {
             get => default;
@@ -217,6 +219,6 @@ namespace LibraryBL
             {
             }
         }
-        
+        */
     }
 }
