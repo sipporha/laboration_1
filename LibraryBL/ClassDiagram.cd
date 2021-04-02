@@ -9,7 +9,7 @@
   </Class>
   <Class Name="LibraryBL.Bokning">
     <Position X="10.5" Y="5.25" Width="1.75" />
-    <AssociationLine Name="medlem" Type="LibraryBL.Medlem" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Har" Type="LibraryBL.Medlem" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="12.25" Y="6.893" />
         <Point X="12.625" Y="6.893" />
@@ -21,28 +21,26 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAAARAAQAAAAAAIAAAAgAAACIAAgAgQAgAAAAAgAA=</HashCode>
+      <HashCode>AAACAARAAQACAAAAIAAAAAAAACIAAghAQAgAAAAAgAA=</HashCode>
       <FileName>Bokning.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="medlem" />
-      <Property Name="bok" />
+      <Property Name="Har" />
+      <Property Name="Innehåller" />
+      <Property Name="Skapar" />
     </ShowAsAssociation>
   </Class>
   <Class Name="LibraryBL.Faktura">
     <Position X="7.25" Y="6" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQIQAAACAAAAAIAAAAAAAAAAAAIAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAQIQAAAAAAAAAIAAAAAAAAAAAAIAAAAgAA=</HashCode>
       <FileName>Faktura.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="bokning" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="LibraryBL.Main">
     <Position X="7.25" Y="1.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AASAAAAAACAAAAgAAAABQAADAEBBBAAAAAAAAAAAAAQ=</HashCode>
+      <HashCode>AASCAAAAAKgAAAAAAAABwAACAEABBAAAAAAAAAAgAAQ=</HashCode>
       <FileName>Main.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

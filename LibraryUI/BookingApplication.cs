@@ -140,12 +140,10 @@ namespace LibraryUI
             foreach (var bok in bokadeBöcker)
             {
                 main.LäggTillBokning(bok, medlem);
-                //bok.Tillgänglig = false;
             }
 
             labelLåntagareFail.Text="";
             labelFailBok.Text = "";
-            MessageBox.Show("Bokning är sparad!","Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
             dataGridViewBooked.Rows.Clear();  
             medlem = null;
             UppdateraInnehåll();

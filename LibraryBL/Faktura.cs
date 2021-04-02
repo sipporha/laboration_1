@@ -15,22 +15,22 @@ namespace LibraryBL
         public double Totalpris { get; private set; }
         public double ÅterståendeSumma { get; set; }
 
-        // Är utkommenterat eftersom de endast är självgenererad kod för att classdiagram av någon anledning behövt det.
-        /*
-        public Bokning bokning
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        */
+        
 
         internal Faktura(Bokning bokning, double totalpris)
         {
             Bokning = bokning;
             Totalpris = totalpris;
             ÅterståendeSumma = totalpris;
+        }
+
+        // Kod för klassdiagram
+        public Bokning bokning
+        {
+            get => default;
+            set
+            {
+            }
         }
     }
 }

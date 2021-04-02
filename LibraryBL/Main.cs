@@ -87,7 +87,7 @@ namespace LibraryBL
             Bokning bokning = new Bokning(++bokningsnummer, bok, medlem, DateTime.Now, DateTime.Now.AddDays(30));
             bok.Tillgänglig = false;
             libraryData.bokningsRepository.Tabell.Add(bokning);
-            
+            MessageBox.Show("Bokning är sparad!", "Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -201,8 +201,7 @@ namespace LibraryBL
             return Fakturor;
         }
 
-        // Är utkommenterat eftersom de endast är självgenererad kod för att classdiagram av någon anledning behövt det.
-        /*
+      //Kod för klassdiagrammet
         internal LibraryData LibraryData
         {
             get => default;
@@ -218,6 +217,6 @@ namespace LibraryBL
             {
             }
         }
-        */
+        
     }
 }

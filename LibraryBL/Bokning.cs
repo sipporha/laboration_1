@@ -21,25 +21,6 @@ namespace LibraryBL
         public bool Utlämnad { get; set; }
         public Faktura Faktura { get; set; }
 
-        // Är utkommenterat eftersom de endast är självgenererad kod för att classdiagram av någon anledning behövt det.
-        /*
-        public Medlem medlem
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public Bok bok
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        */
-
         public Bokning(int bokningsnummer,Bok bok, Medlem medlem, DateTime starttid, DateTime sluttid)
         {
             Bokningsnummer = bokningsnummer;
@@ -49,6 +30,30 @@ namespace LibraryBL
             Sluttid = sluttid;
             Faktura = null;
         }
-        
+
+        // Nedanstående kod är för klassdiagrammet
+        public Medlem Har
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Bok Innehåller
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public Faktura Skapar
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
