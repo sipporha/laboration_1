@@ -85,7 +85,9 @@ namespace LibraryBL
         public void LäggTillBokning(Bok bok, Medlem medlem)
         {
             Bokning bokning = new Bokning(++bokningsnummer, bok, medlem, DateTime.Now, DateTime.Now.AddDays(30));
+            bok.Tillgänglig = false;
             libraryData.bokningsRepository.Tabell.Add(bokning);
+            
         }
 
         /// <summary>

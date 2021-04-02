@@ -140,7 +140,7 @@ namespace LibraryUI
             foreach (var bok in bokadeBöcker)
             {
                 main.LäggTillBokning(bok, medlem);
-                bok.Tillgänglig = false;
+                //bok.Tillgänglig = false;
             }
 
             labelLåntagareFail.Text="";
