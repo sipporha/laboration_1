@@ -39,6 +39,7 @@ namespace LibraryUI
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonDeleteBooking = new System.Windows.Forms.Button();
+            this.buttonGiveBooking = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBooking)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInvoices)).BeginInit();
             this.SuspendLayout();
@@ -57,19 +58,19 @@ namespace LibraryUI
             // 
             this.dataGridViewBooking.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewBooking.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBooking.Location = new System.Drawing.Point(38, 224);
+            this.dataGridViewBooking.Location = new System.Drawing.Point(99, 267);
             this.dataGridViewBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewBooking.Name = "dataGridViewBooking";
             this.dataGridViewBooking.RowHeadersWidth = 72;
             this.dataGridViewBooking.RowTemplate.Height = 37;
-            this.dataGridViewBooking.Size = new System.Drawing.Size(1305, 344);
+            this.dataGridViewBooking.Size = new System.Drawing.Size(1486, 344);
             this.dataGridViewBooking.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(38, 168);
+            this.label2.Location = new System.Drawing.Point(99, 211);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(259, 38);
             this.label2.TabIndex = 3;
@@ -79,7 +80,7 @@ namespace LibraryUI
             // 
             this.buttonCancelBooking.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.buttonCancelBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancelBooking.Location = new System.Drawing.Point(946, 598);
+            this.buttonCancelBooking.Location = new System.Drawing.Point(1180, 641);
             this.buttonCancelBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancelBooking.Name = "buttonCancelBooking";
             this.buttonCancelBooking.Size = new System.Drawing.Size(189, 60);
@@ -92,17 +93,17 @@ namespace LibraryUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(713, 608);
+            this.label3.Location = new System.Drawing.Point(925, 651);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 37);
+            this.label3.Size = new System.Drawing.Size(239, 37);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Hantera bokning";
+            this.label3.Text = "Hantera bokningar";
             // 
             // dataGridViewInvoices
             // 
             this.dataGridViewInvoices.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dataGridViewInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewInvoices.Location = new System.Drawing.Point(38, 856);
+            this.dataGridViewInvoices.Location = new System.Drawing.Point(99, 902);
             this.dataGridViewInvoices.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridViewInvoices.Name = "dataGridViewInvoices";
             this.dataGridViewInvoices.RowHeadersWidth = 72;
@@ -114,7 +115,7 @@ namespace LibraryUI
             // 
             this.buttonPayInvoice.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.buttonPayInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPayInvoice.Location = new System.Drawing.Point(1029, 1144);
+            this.buttonPayInvoice.Location = new System.Drawing.Point(1090, 1190);
             this.buttonPayInvoice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonPayInvoice.Name = "buttonPayInvoice";
             this.buttonPayInvoice.Size = new System.Drawing.Size(171, 54);
@@ -127,7 +128,7 @@ namespace LibraryUI
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 11.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(658, 1150);
+            this.label4.Location = new System.Drawing.Point(719, 1196);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(355, 37);
             this.label4.TabIndex = 15;
@@ -137,7 +138,7 @@ namespace LibraryUI
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(38, 802);
+            this.label5.Location = new System.Drawing.Point(99, 848);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(235, 38);
             this.label5.TabIndex = 16;
@@ -147,7 +148,7 @@ namespace LibraryUI
             // 
             this.buttonDeleteBooking.BackColor = System.Drawing.Color.LightCoral;
             this.buttonDeleteBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDeleteBooking.Location = new System.Drawing.Point(1154, 598);
+            this.buttonDeleteBooking.Location = new System.Drawing.Point(1396, 641);
             this.buttonDeleteBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonDeleteBooking.Name = "buttonDeleteBooking";
             this.buttonDeleteBooking.Size = new System.Drawing.Size(189, 60);
@@ -156,11 +157,25 @@ namespace LibraryUI
             this.buttonDeleteBooking.UseVisualStyleBackColor = false;
             this.buttonDeleteBooking.Click += new System.EventHandler(this.buttonDeleteBooking_Click);
             // 
+            // buttonGiveBooking
+            // 
+            this.buttonGiveBooking.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.buttonGiveBooking.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGiveBooking.Location = new System.Drawing.Point(99, 641);
+            this.buttonGiveBooking.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonGiveBooking.Name = "buttonGiveBooking";
+            this.buttonGiveBooking.Size = new System.Drawing.Size(248, 60);
+            this.buttonGiveBooking.TabIndex = 18;
+            this.buttonGiveBooking.Text = "Lämna ut bokning";
+            this.buttonGiveBooking.UseVisualStyleBackColor = false;
+            this.buttonGiveBooking.Click += new System.EventHandler(this.buttonGiveBooking_Click);
+            // 
             // ReturnApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1714, 1400);
+            this.Controls.Add(this.buttonGiveBooking);
             this.Controls.Add(this.buttonDeleteBooking);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -194,5 +209,6 @@ namespace LibraryUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonDeleteBooking;
+        private System.Windows.Forms.Button buttonGiveBooking;
     }
 }

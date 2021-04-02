@@ -14,7 +14,7 @@ namespace LibraryUI
     {
         List<Bok> bokadeBöcker;
         readonly Main main;
-        Medlem m;
+        Medlem medlem;
 
         public BookingApplication()
         {
@@ -92,9 +92,9 @@ namespace LibraryUI
                 return;
             }
             DataGridViewRow valdLåntagare = dataGridViewMember.SelectedRows[0];
-            m = (Medlem)valdLåntagare.DataBoundItem;
+            medlem = (Medlem)valdLåntagare.DataBoundItem;
             textBoxLoaner.DataBindings.Clear();
-            textBoxLoaner.DataBindings.Add("Text",m, "FullNamn");
+            textBoxLoaner.DataBindings.Add("Text",medlem, "FullNamn");
         }
 
         private void buttonAddBook_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ namespace LibraryUI
         /// <param name="e"></param>
         private void buttonAddBooking_Click(object sender, EventArgs e)
         {
-            if (m==null)
+            if (medlem==null)
             {
                 labelLåntagareFail.Text="Du måste välja användare!";   
                 return;
@@ -137,17 +137,17 @@ namespace LibraryUI
                 return;
             }
 
-            foreach (var item in bokadeBöcker)
+            foreach (var bok in bokadeBöcker)
             {
-                main.LäggTillBokning(item, m);
-                item.Tillgänglig = false;
+                main.LäggTillBokning(bok, medlem);
+                bok.Tillgänglig = false;
             }
 
             labelLåntagareFail.Text="";
             labelFailBok.Text = "";
             MessageBox.Show("Bokning är sparad!","Meddelande", MessageBoxButtons.OK, MessageBoxIcon.Information);
             dataGridViewBooked.Rows.Clear();  
-            m = null;
+            medlem = null;
             UppdateraInnehåll();
             textBoxLoaner.Text = "";
         }

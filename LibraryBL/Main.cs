@@ -80,11 +80,11 @@ namespace LibraryBL
         /// <summary>
         /// Skapar en ny bokning med ett låneintervall på 30 dagar.
         /// </summary>
-        /// <param name="b"></param>
-        /// <param name="m"></param>
-        public void LäggTillBokning(Bok b, Medlem m)
+        /// <param name="bok"></param>
+        /// <param name="medlem"></param>
+        public void LäggTillBokning(Bok bok, Medlem medlem)
         {
-            Bokning bokning = new Bokning(++bokningsnummer, b, m, DateTime.Now, DateTime.Now.AddDays(30));
+            Bokning bokning = new Bokning(++bokningsnummer, bok, medlem, DateTime.Now, DateTime.Now.AddDays(30));
             libraryData.bokningsRepository.Tabell.Add(bokning);
         }
 
@@ -94,15 +94,29 @@ namespace LibraryBL
         public Bokning TaBortBokning(Bokning valdBokning)
         {
            
-            if (DateTime.Now > valdBokning.Sluttid)
+            if (DateTime.Now > valdBokning.Sluttid || valdBokning.Utlämnad==true)
             {
-                MessageBox.Show("Du får inte ta bort en bokning som är försenad!", "Varning!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Du får inte ta bort en bokning som är försenad eller utlämnad!", "Varning!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 valdBokning.Återlämnad = true;
                 valdBokning.Bok.Tillgänglig = true;
-                MessageBox.Show("Bokningen har blivit borrtagen!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bokningen har blivit borttagen!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return valdBokning;
+        }
+
+        public Bokning GeUtBokning(Bokning valdBokning)
+        {
+            if (valdBokning.Utlämnad)
+            {
+                MessageBox.Show("Boken är redan utlämnad!", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                valdBokning.Utlämnad = true;
+                MessageBox.Show($"Bokning utlämnad med bokningsnummer: {valdBokning.Bokningsnummer}", "Information");
             }
             return valdBokning;
         }
@@ -118,15 +132,28 @@ namespace LibraryBL
             // En bok får status tillgänglig också.
             // Vid de fall en bok är försenad genomförs en matematisk uträkning på totalbelopp, samt att en faktura skapas.
             // Om en bok lämnas tillbaka i tid, skapas dock ingen faktura eftersom det är meningslöst att skapa fakturor med ett belopp på 0:-
-           
-            item.Återlämnad = true;
-            item.Bok.Tillgänglig = true;
-            if (DateTime.Now > item.Sluttid)
+
+            DialogResult svar = MessageBox.Show("Är boken återlämnad?", "Varning!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (svar == DialogResult.Yes)
             {
-               SkapaFaktura(item);
+                item.Återlämnad = true;
+                item.Utlämnad = false;
+                item.Bok.Tillgänglig = true;
+                if (DateTime.Now > item.Sluttid)
+                {
+                    SkapaFaktura(item);
+                }
+                MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
-            MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                MessageBox.Show("Du måste ta boken i retur innan du kan avsluta bokningen!", "Varning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             return item;
+
+
+
         }
 
         /// <summary>

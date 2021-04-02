@@ -36,9 +36,6 @@ namespace LibraryUI
             dataGridViewBooking.AllowUserToResizeRows = false;
             dataGridViewBooking.AllowUserToAddRows = false;
 
-            
-
-
             dataGridViewInvoices.DataSource = main.HämtaFaktura();
             dataGridViewInvoices.RowHeadersVisible = false;
             dataGridViewInvoices.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -133,6 +130,20 @@ namespace LibraryUI
             else
             {
                 main.TaBortBokning((Bokning)selectedRow.DataBoundItem);
+            }
+            LaddaInnehåll();
+        }
+
+        private void buttonGiveBooking_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dataGridViewBooking.CurrentRow;
+            if (selectedRow == null)
+            {
+                MessageBox.Show("Det finns inga bokningar", "Varning!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                main.GeUtBokning((Bokning)selectedRow.DataBoundItem);
             }
             LaddaInnehåll();
         }

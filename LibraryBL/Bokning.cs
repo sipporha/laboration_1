@@ -18,6 +18,7 @@ namespace LibraryBL
         public DateTime Starttid { get; private set; }
         public DateTime Sluttid { get; private set; }
         public bool Återlämnad { get; set; }
+        public bool Utlämnad { get; set; }
         public Faktura Faktura { get; set; }
 
         // Är utkommenterat eftersom de endast är självgenererad kod för att classdiagram av någon anledning behövt det.
