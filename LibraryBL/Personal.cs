@@ -25,14 +25,5 @@ namespace LibraryBL
             TelefonNummer = telefonnummer;
             Epost = epost;
         }
-
-        // kod för ClassDiagram.cd
-        public Bokning Bokar
-        {
-            get => default;
-            set
-            {
-            }
-        }
     }
 }

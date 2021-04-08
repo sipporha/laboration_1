@@ -15,23 +15,11 @@ namespace LibraryBL
         public double Totalpris { get; private set; }
         public double ÅterståendeSumma { get; set; }
 
-        
-
         internal Faktura(Bokning bokning, double totalpris)
         {
             Bokning = bokning;
             Totalpris = totalpris;
             ÅterståendeSumma = totalpris;
-        }
-
-        // kod för ClassDiagram.cd
-        public Bokning bokning
-        {
-            get => default;
-            set
-            {
-            }
-        }
-      
+        } 
     }
 }

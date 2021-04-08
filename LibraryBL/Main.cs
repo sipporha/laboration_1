@@ -154,8 +154,6 @@ namespace LibraryBL
             }
             return item;
 
-
-
         }
 
         /// <summary>
@@ -201,23 +199,5 @@ namespace LibraryBL
             return Fakturor;
         }
 
-        
-        //kod för ClassDiagram.cd
-        internal LibraryData LibraryData
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        // kod för ClassDiagram.cd
-        public Personal Personal
-        {
-            get => default;
-            set
-            {
-            }
-        }
-       
     }
 }

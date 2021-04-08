@@ -30,31 +30,6 @@ namespace LibraryBL
             Sluttid = sluttid;
             Faktura = null;
         }
-
-        // kod för ClassDiagram.cd
-        public Medlem Har
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        // kod för ClassDiagram.cd
-        public Bok Innehåller
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        // kod för ClassDiagram.cd
-        public Faktura Skapar
-        {
-            get => default;
-            set
-            {
-            }
-        }
         
     }
 }

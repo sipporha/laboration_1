@@ -13,8 +13,7 @@ namespace LibraryBL
         public string Efternamn { get; private set; }
         public string Telefonnummer { get; private set; }
         public string Epost { get; private set; }
-        public string FullNamn { get { return $@"Medlemsnummer: {Medlemsnummer}
-{Förnamn} {Efternamn}"; } }
+        public string FullNamn { get { return $@"Medlemsnummer: {Medlemsnummer} {Förnamn} {Efternamn}"; } }
 
         internal Medlem(int medlemsnummer, string förnamn, string efternamn, string telefonnummer, string epost)
         {
@@ -24,7 +23,5 @@ namespace LibraryBL
             Telefonnummer = telefonnummer;
             Epost = epost;
         }
-
-
     }
 }
