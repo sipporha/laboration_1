@@ -33,7 +33,7 @@
   <Class Name="LibraryBL.Faktura">
     <Position X="7.25" Y="6" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAQIQAAAAAAAAAIAAAAAAAAAAAAIAAAAgAA=</HashCode>
+      <HashCode>AAAAAAAAAAQIQAAACAAAAAIAAAAAAAAAAAAIAAAAgAA=</HashCode>
       <FileName>Faktura.cs</FileName>
     </TypeIdentifier>
   </Class>

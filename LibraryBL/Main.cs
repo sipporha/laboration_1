@@ -202,8 +202,7 @@ namespace LibraryBL
         }
 
         
-        // Utkommenterad kod för ClassDiagram.cd
-        /*
+        //kod för ClassDiagram.cd
         internal LibraryData LibraryData
         {
             get => default;
@@ -211,7 +210,7 @@ namespace LibraryBL
             {
             }
         }
-
+        // kod för ClassDiagram.cd
         public Personal Personal
         {
             get => default;
@@ -219,6 +218,6 @@ namespace LibraryBL
             {
             }
         }
-        */
+       
     }
 }
