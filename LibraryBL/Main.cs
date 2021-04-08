@@ -67,11 +67,11 @@ namespace LibraryBL
 
             List<Bok> availableBooks = new List<Bok>();
 
-            foreach (var item in libraryData.bokRepository.Tabell)
+            foreach (var bok in libraryData.bokRepository.Tabell)
             {
-                if (item.Tillgänglig)
+                if (bok.Tillgänglig)
                 {
-                    availableBooks.Add(item);
+                    availableBooks.Add(bok);
                 }
             }
             return availableBooks;
@@ -126,9 +126,9 @@ namespace LibraryBL
         /// <summary>
         /// Denna metod tar emot ett index från användare och avslutar vald bokning. Beronde på om den blivit försenad eller inte så kommer det skapas en faktura.
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="bokning"></param>
         /// <returns></returns>
-        public Bokning AvslutaBokning(Bokning item)
+        public Bokning AvslutaBokning(Bokning bokning)
         {
             // Här skickas in en referens och ett index till en vald bokning från UI:t som oavsett får status Återlämnad.
             // En bok får status tillgänglig också.
@@ -138,12 +138,12 @@ namespace LibraryBL
             DialogResult svar = MessageBox.Show("Är boken återlämnad?", "Varning!", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (svar == DialogResult.Yes)
             {
-                item.Återlämnad = true;
-                item.Utlämnad = false;
-                item.Bok.Tillgänglig = true;
-                if (DateTime.Now > item.Sluttid)
+                bokning.Återlämnad = true;
+                bokning.Utlämnad = false;
+                bokning.Bok.Tillgänglig = true;
+                if (DateTime.Now > bokning.Sluttid)
                 {
-                    SkapaFaktura(item);
+                    SkapaFaktura(bokning);
                 }
                 MessageBox.Show("Boken är återlämnad", "Notis", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
@@ -152,7 +152,7 @@ namespace LibraryBL
             {
                 MessageBox.Show("Du måste ta boken i retur innan du kan avsluta bokningen!", "Varning!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return item;
+            return bokning;
 
         }
 
