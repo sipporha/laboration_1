@@ -31,8 +31,7 @@ namespace LibraryBL
             Faktura = null;
         }
 
-        // Utkommenterad kod för ClassDiagram.cd
-        /*
+        // kod för ClassDiagram.cd
         public Medlem Har
         {
             get => default;
@@ -40,7 +39,7 @@ namespace LibraryBL
             {
             }
         }
-
+        // kod för ClassDiagram.cd
         public Bok Innehåller
         {
             get => default;
@@ -48,7 +47,7 @@ namespace LibraryBL
             {
             }
         }
-
+        // kod för ClassDiagram.cd
         public Faktura Skapar
         {
             get => default;
@@ -56,6 +55,6 @@ namespace LibraryBL
             {
             }
         }
-        */
+        
     }
 }

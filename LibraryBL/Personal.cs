@@ -15,19 +15,7 @@ namespace LibraryBL
         public string Epost { get; private set; }
         public string Lösenord { get; private set; }
 
-        // Utkommenterad kod för ClassDiagram.cd
-        /*
-        public Bokning Bokar
-        {
-            get => default;
-            set
-            {
-            }
-        }
-        */
-
         // public string Roll { get; private set; } Skapad och förberedd för chefsapplikation
-
         internal Personal(int anställningsnummer,string lösenord, string förnamn, string efternamn, string telefonnummer, string epost )
         {
             Id = anställningsnummer;
@@ -38,6 +26,13 @@ namespace LibraryBL
             Epost = epost;
         }
 
-       
+        // kod för ClassDiagram.cd
+        public Bokning Bokar
+        {
+            get => default;
+            set
+            {
+            }
+        }
     }
 }
