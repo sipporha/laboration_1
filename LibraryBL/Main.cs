@@ -183,9 +183,9 @@ namespace LibraryBL
         public void SkapaFaktura(Bokning bokning)
         {
             double totalpris = Math.Floor((DateTime.Now.Date - bokning.Sluttid).TotalDays * 10);
-            MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             Faktura faktura = new Faktura(bokning, totalpris);
             bokning.Faktura = faktura;
+            MessageBox.Show("Bokningen var försenad och en faktura har skapats.", "Reprimand!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
         public List<Faktura> HämtaFaktura()
